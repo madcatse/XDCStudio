@@ -1,0 +1,21 @@
+* text=auto
+.gitattributes text eol=lf
+.gitignore text eol=lf
+*.txt text eol=lf
+*.Config text eol=lf
+*.manifest text eol=lf
+*.cs text eol=lf
+*.csproj text eol=lf
+*.ps1 text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+*.PAS -text
+*.scr -text
+*.EXE binary
+*.exe binary
+*.png binary
+*.ico binary

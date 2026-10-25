@@ -1,0 +1,10 @@
+Built-in image_gen, 2026-10-25.
+Final asset: pc5150-badapple.png. Windows icon: xdc-studio.ico.
+
+Initial generation prompt:
+Use case: stylized-concept. Asset type: Windows desktop application icon, square image with transparent background. Create a crisp illustrated icon of a typical early IBM PC 5150: a beige horizontal desktop system unit with two black 5.25-inch floppy drives on the front, a chunky beige CRT monitor sitting directly on top, and its small beige keyboard in front. Slight three-quarter view, recognizable 1981 proportions. The CRT has dark glass with a simple cyan, magenta and green CGA colour-bar image. Strong silhouette, clean outlined shapes, restrained shading, clear readable details at 32 and 48 pixels, not a photorealistic scene. Centered compact composition filling most of the square with about 6 percent clear margin. Only this computer, no desk, no surroundings, no text, no lettering, no watermark, no badge, no extra devices. Genuine transparent alpha background.
+
+Final edit prompt:
+Use case: compositing. Image 1 is the edit target: the existing beige PC 5150 application icon on a transparent background. Image 2 is the exact Bad Apple frame to insert. Change ONLY the illuminated image inside the CRT screen of image 1: replace the cyan/magenta/green colour bars with the black silhouette on white background from image 2. Keep the silhouette recognizable and faithful; fit it naturally inside the CRT screen in perspective, preserving the frame's aspect ratio with small side margins if needed. Give the white screen a subtle CRT glow and keep the original glass reflection subdued so the silhouette is legible. Preserve the entire computer body, floppy drives, keyboard, monitor bezel, viewpoint, outline, composition and original transparency. No text, no additional objects. Output transparent alpha background.
+
+The Bad Apple reference frame was supplied by the user.

@@ -1,0 +1,428 @@
+{
+  "Success": true,
+  "Version": "0.5.0",
+  "Signal": {
+    "Success": true,
+    "Checks": 44,
+    "SteadyStateRgb": [
+      "000000",
+      "00731B",
+      "281EF1",
+      "009FFF",
+      "9F0056",
+      "717170",
+      "D01DFF",
+      "999EFF",
+      "4A5400",
+      "21D400",
+      "727272",
+      "40FF82",
+      "FF5200",
+      "D6D200",
+      "FF70EF",
+      "FFFFFF"
+    ],
+    "MeanRenderMilliseconds": 4.71452,
+    "MaximumRenderMilliseconds": 8.4191,
+    "HardwareCaptureCompared": false
+  },
+  "Integration": {
+    "Success": true,
+    "FullMirProfiles": 3,
+    "FullAdjustedMir": true,
+    "AudioMatchesSource": true,
+    "InvalidSettingsRejected": true,
+    "EmptyTemp": true,
+    "Results": [
+      {
+        "name": "MIR_CGA",
+        "passed": true,
+        "seconds": 3.1529974,
+        "peak_app_mib": 63.1875,
+        "file": "<WORKSPACE>\\tests\\ntsc05\\integration\\MIR_CGA.XDV",
+        "mode": 1,
+        "packets": 6042,
+        "fps": 30.0,
+        "duration": 201.4,
+        "bytes": 21474202,
+        "peak_kib_s": 150.0,
+        "changed_frames": 5600,
+        "audio_range": [
+          0,
+          255
+        ],
+        "video_sha256": "4c9ee120423bba33e0eef1114c6f3382d3e262e61625302045ceabb083a90904",
+        "audio_sha256": "5706cc7f4cf55b36d4be475bb5ce9098d7f13a8abaa85f146e681de8c29be15d",
+        "max_cycles": 79544.8,
+        "max_video_bytes": 4385
+      },
+      {
+        "name": "MIR_BW",
+        "passed": true,
+        "seconds": 5.6017097,
+        "peak_app_mib": 69.87890625,
+        "file": "<WORKSPACE>\\tests\\ntsc05\\integration\\MIR_BW.XDV",
+        "mode": 2,
+        "packets": 6042,
+        "fps": 30.0,
+        "duration": 201.4,
+        "bytes": 18599322,
+        "peak_kib_s": 150.0,
+        "changed_frames": 5566,
+        "audio_range": [
+          0,
+          255
+        ],
+        "video_sha256": "bfc3149c81725f589d5d05fb093bc01cfd96e9724ea6c5ccea6b5b2eefdba0c7",
+        "audio_sha256": "5706cc7f4cf55b36d4be475bb5ce9098d7f13a8abaa85f146e681de8c29be15d",
+        "max_cycles": 79545.40000000007,
+        "max_video_bytes": 4385
+      },
+      {
+        "name": "MIR_TND",
+        "passed": true,
+        "seconds": 2.8943747,
+        "peak_app_mib": 62.8203125,
+        "file": "<WORKSPACE>\\tests\\ntsc05\\integration\\MIR_TND.XDV",
+        "mode": 3,
+        "packets": 6042,
+        "fps": 30.0,
+        "duration": 201.4,
+        "bytes": 21190042,
+        "peak_kib_s": 150.0,
+        "changed_frames": 5600,
+        "audio_range": [
+          0,
+          255
+        ],
+        "video_sha256": "12cd989c36cfeff619548812f541d69eb456c513e8a3a17603c9b43ac921e4ac",
+        "audio_sha256": "5706cc7f4cf55b36d4be475bb5ce9098d7f13a8abaa85f146e681de8c29be15d",
+        "max_cycles": 79543.99999999997,
+        "max_video_bytes": 4385
+      },
+      {
+        "name": "MIR_ADJ",
+        "passed": true,
+        "seconds": 2.9258989,
+        "peak_app_mib": 62.74609375,
+        "file": "<WORKSPACE>\\tests\\ntsc05\\integration\\MIR_ADJ.XDV",
+        "mode": 1,
+        "packets": 6042,
+        "fps": 30.0,
+        "duration": 201.4,
+        "bytes": 21420954,
+        "peak_kib_s": 150.0,
+        "changed_frames": 5609,
+        "audio_range": [
+          0,
+          255
+        ],
+        "video_sha256": "99ed5663a1c561994732fab024bf603dbfef834bdbbcfd8ca0ac1cb2959ccae7",
+        "audio_sha256": "5706cc7f4cf55b36d4be475bb5ce9098d7f13a8abaa85f146e681de8c29be15d",
+        "max_cycles": 79544.5,
+        "max_video_bytes": 4385
+      },
+      {
+        "name": "HALF",
+        "passed": true,
+        "seconds": 0.4299146,
+        "peak_app_mib": 53.44921875,
+        "file": "<WORKSPACE>\\tests\\ntsc05\\integration\\HALF.XDV",
+        "mode": 1,
+        "packets": 180,
+        "fps": 30.0,
+        "duration": 6.0,
+        "bytes": 331956,
+        "peak_kib_s": 150.0,
+        "changed_frames": 160,
+        "audio_range": [
+          4,
+          255
+        ],
+        "video_sha256": "404e3702b883601e691d24d2f980899bf5c71e9d68b50898a7b6c2353826456d",
+        "audio_sha256": "395f3d817e989ea4161626c6724c0b13746027866b71390b68aa4fa7801a5fa4",
+        "max_cycles": 79544.89999999998,
+        "max_video_bytes": 4382
+      },
+      {
+        "name": "BW_ADJ",
+        "passed": true,
+        "seconds": 0.2609984,
+        "peak_app_mib": 50.07421875,
+        "file": "<WORKSPACE>\\tests\\ntsc05\\integration\\BW_ADJ.XDV",
+        "mode": 2,
+        "packets": 180,
+        "fps": 30.0,
+        "duration": 6.0,
+        "bytes": 359604,
+        "peak_kib_s": 150.0,
+        "changed_frames": 161,
+        "audio_range": [
+          4,
+          255
+        ],
+        "video_sha256": "366fdd2a23ff1ea8dee62c2dbeeaa58bf8347cbfd4b5342728682b7a9948b7f0",
+        "audio_sha256": "395f3d817e989ea4161626c6724c0b13746027866b71390b68aa4fa7801a5fa4",
+        "max_cycles": 79542.40000000004,
+        "max_video_bytes": 4385
+      },
+      {
+        "name": "TND_ADJ",
+        "passed": true,
+        "seconds": 0.459659,
+        "peak_app_mib": 53.921875,
+        "file": "<WORKSPACE>\\tests\\ntsc05\\integration\\TND_ADJ.XDV",
+        "mode": 3,
+        "packets": 180,
+        "fps": 30.0,
+        "duration": 6.0,
+        "bytes": 404660,
+        "peak_kib_s": 150.0,
+        "changed_frames": 163,
+        "audio_range": [
+          4,
+          255
+        ],
+        "video_sha256": "2650a673ef612481a4fa683dead392c4a2035cc7bd22e89bd0aa96ae403abfe6",
+        "audio_sha256": "395f3d817e989ea4161626c6724c0b13746027866b71390b68aa4fa7801a5fa4",
+        "max_cycles": 79545.4,
+        "max_video_bytes": 4385
+      },
+      {
+        "name": "ZERO",
+        "passed": true,
+        "seconds": 0.3966405,
+        "peak_app_mib": 45.83203125,
+        "file": "<WORKSPACE>\\tests\\ntsc05\\integration\\ZERO.XDV",
+        "mode": 3,
+        "packets": 60,
+        "fps": 30.0,
+        "duration": 2.0,
+        "bytes": 101436,
+        "peak_kib_s": 135.0,
+        "changed_frames": 47,
+        "audio_range": [
+          4,
+          255
+        ],
+        "video_sha256": "62962619d83d3c3625a19d5c9acbf73a9353be33da86cac4b4a4704a7b5d62fc",
+        "audio_sha256": "2a27a67e68cd3093bee64ec99b2f871f9539d1bc3d6e096a82e220aa4dfc9e4a",
+        "max_cycles": 79541.30000000035,
+        "max_video_bytes": 3689
+      },
+      {
+        "name": "NONE",
+        "passed": true,
+        "seconds": 0.3979116,
+        "peak_app_mib": 45.671875,
+        "file": "<WORKSPACE>\\tests\\ntsc05\\integration\\NONE.XDV",
+        "mode": 3,
+        "packets": 60,
+        "fps": 30.0,
+        "duration": 2.0,
+        "bytes": 101436,
+        "peak_kib_s": 135.0,
+        "changed_frames": 47,
+        "audio_range": [
+          4,
+          255
+        ],
+        "video_sha256": "62962619d83d3c3625a19d5c9acbf73a9353be33da86cac4b4a4704a7b5d62fc",
+        "audio_sha256": "2a27a67e68cd3093bee64ec99b2f871f9539d1bc3d6e096a82e220aa4dfc9e4a",
+        "max_cycles": 79541.30000000035,
+        "max_video_bytes": 3689
+      },
+      {
+        "name": "REPEAT",
+        "passed": true,
+        "seconds": 0.4467641,
+        "peak_app_mib": 53.66015625,
+        "file": "<WORKSPACE>\\tests\\ntsc05\\integration\\REPEAT.XDV",
+        "mode": 3,
+        "packets": 180,
+        "fps": 30.0,
+        "duration": 6.0,
+        "bytes": 404660,
+        "peak_kib_s": 150.0,
+        "changed_frames": 163,
+        "audio_range": [
+          4,
+          255
+        ],
+        "video_sha256": "2650a673ef612481a4fa683dead392c4a2035cc7bd22e89bd0aa96ae403abfe6",
+        "audio_sha256": "395f3d817e989ea4161626c6724c0b13746027866b71390b68aa4fa7801a5fa4",
+        "max_cycles": 79545.4,
+        "max_video_bytes": 4385
+      }
+    ]
+  },
+  "Interface": {
+    "Success": true,
+    "NtscSwitch": true,
+    "NtscTuning": true,
+    "NtscReset": true,
+    "GammaAdjustment": true,
+    "SaturationAdjustment": true,
+    "DitherStrengthAdjustment": true,
+    "ComparisonToggle": true,
+    "ColorReset": true,
+    "SourceUnaffectedByAdjustments": true,
+    "PreviewLoaded": true,
+    "ProfileCount": 3,
+    "MediaLoaded": true,
+    "ControlsRestored": true,
+    "SourceSeek": true,
+    "AutomaticPreview": true,
+    "English": true,
+    "ResultSeek": true,
+    "Playback": true,
+    "AudioActive": true,
+    "OverwriteDeclinedPreservesFile": true,
+    "OverwriteAccepted": true,
+    "OverwriteRequests": 2,
+    "FileButtonWidthAt96Dpi": 86,
+    "ButtonsFullyVisible": true,
+    "ScaledButtonsFullyVisible": true,
+    "DeviceDpi": 96,
+    "PreviewsCompleted": 14
+  },
+  "Comparison": {
+    "Success": true,
+    "Cases": [
+      {
+        "Mode": 1,
+        "HalfHeight": false,
+        "Fit": "fit",
+        "PreviewMatchesConversion": true,
+        "OriginalUnchanged": true
+      },
+      {
+        "Mode": 1,
+        "HalfHeight": true,
+        "Fit": "fit",
+        "PreviewMatchesConversion": true,
+        "OriginalUnchanged": true
+      },
+      {
+        "Mode": 2,
+        "HalfHeight": false,
+        "Fit": "crop",
+        "PreviewMatchesConversion": true,
+        "OriginalUnchanged": true
+      },
+      {
+        "Mode": 3,
+        "HalfHeight": false,
+        "Fit": "stretch",
+        "PreviewMatchesConversion": true,
+        "OriginalUnchanged": true
+      }
+    ]
+  },
+  "MonitorDialog": {
+    "Success": true,
+    "Tuning": true,
+    "PaletteDisablesControls": true,
+    "Reset": true,
+    "ButtonsVisible": true
+  },
+  "Relocation": {
+    "Success": true,
+    "UnicodeAndSpaces": true,
+    "RelativeArgumentsAndWorkingDirectory": true,
+    "EmptyTemp": true,
+    "RootDllCount": 0,
+    "SeparateWrapperProcess": false,
+    "FilesAtRoot": [
+      "README.en.txt",
+      "README.txt",
+      "XdcConverter.exe"
+    ]
+  },
+  "Icon": {
+    "Success": true,
+    "IconSizes": [
+      16,
+      20,
+      24,
+      32,
+      40,
+      48,
+      64,
+      128,
+      256
+    ],
+    "NativeExeContainsAllSizes": true,
+    "Machine": "x64"
+  },
+  "EncodingUnchanged": {
+    "Success": true,
+    "IdenticalTo04": {
+      "MIR_CGA": true,
+      "MIR_BW": true,
+      "MIR_TND": true,
+      "MIR_ADJ": true
+    }
+  },
+  "Players": [
+    {
+      "Success": true,
+      "ClockAdvanced": true,
+      "AudioActive": true,
+      "LiveVolumeAndSeekPersistence": true,
+      "StopResetsToBeginning": true,
+      "PauseButton": true,
+      "VolumeSliderWidth": 124,
+      "TransportOnLeft": true,
+      "PauseHeldFrame": true,
+      "SeekAndResumeCycles": 8,
+      "ReachedEnd": true,
+      "Mode": 1,
+      "Packets": 6042,
+      "RenderedFrames": 70
+    },
+    {
+      "Success": true,
+      "ClockAdvanced": true,
+      "AudioActive": true,
+      "LiveVolumeAndSeekPersistence": true,
+      "StopResetsToBeginning": true,
+      "PauseButton": true,
+      "VolumeSliderWidth": 124,
+      "TransportOnLeft": true,
+      "PauseHeldFrame": true,
+      "SeekAndResumeCycles": 8,
+      "ReachedEnd": true,
+      "Mode": 2,
+      "Packets": 6042,
+      "RenderedFrames": 71
+    },
+    {
+      "Success": true,
+      "ClockAdvanced": true,
+      "AudioActive": true,
+      "LiveVolumeAndSeekPersistence": true,
+      "StopResetsToBeginning": true,
+      "PauseButton": true,
+      "VolumeSliderWidth": 124,
+      "TransportOnLeft": true,
+      "PauseHeldFrame": true,
+      "SeekAndResumeCycles": 8,
+      "ReachedEnd": true,
+      "Mode": 3,
+      "Packets": 6042,
+      "RenderedFrames": 71
+    }
+  ],
+  "PortableArchive": {
+    "Success": true,
+    "VerifiedFiles": 284,
+    "TopLevelFiles": [
+      "README.en.txt",
+      "README.txt",
+      "XdcConverter.exe"
+    ],
+    "Bytes": 132003264,
+    "SHA256": "4ADE93BB85A15B939BC61D8239E3BD17614829796A9C3CA2C04B0420424ADAFF"
+  }
+}

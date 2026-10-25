@@ -1,0 +1,72 @@
+{
+  "Success": true,
+  "Version": "0.7.1",
+  "UI": {
+    "Success": true,
+    "HelpEnglish": true,
+    "HelpRussian": true,
+    "HelpAlignedWithActions": true,
+    "Bayer4": true,
+    "BlueNoise": true,
+    "StabilityControl": true,
+    "NtscEncodingSelection": true,
+    "NtscSwitch": true,
+    "NtscTuning": true,
+    "NtscReset": true,
+    "GammaAdjustment": true,
+    "SaturationAdjustment": true,
+    "DitherStrengthAdjustment": true,
+    "ComparisonToggle": true,
+    "ColorReset": true,
+    "SourceUnaffectedByAdjustments": true,
+    "PreviewLoaded": true,
+    "ProfileCount": 3,
+    "MediaLoaded": true,
+    "ControlsRestored": true,
+    "SourceSeek": true,
+    "AutomaticPreview": true,
+    "English": true,
+    "ResultSeek": true,
+    "Playback": true,
+    "AudioActive": true,
+    "OverwriteDeclinedPreservesFile": true,
+    "OverwriteAccepted": true,
+    "OverwriteRequests": 2,
+    "FileButtonWidthAt96Dpi": 86,
+    "ButtonsFullyVisible": true,
+    "ScaledButtonsFullyVisible": true,
+    "DeviceDpi": 96,
+    "PreviewsCompleted": 22
+  },
+  "HTML": {
+    "Success": true,
+    "Languages": [
+      "help.ru.html",
+      "help.en.html"
+    ],
+    "LocalLinksExist": true,
+    "AnchorsValid": true,
+    "MatchingSections": true,
+    "TableRows": 22,
+    "OfflineStyles": true,
+    "NoScriptsOrRemoteResources": true
+  },
+  "BrowserVisualReview": {
+    "Russian": true,
+    "English": true,
+    "LanguageLink": true,
+    "CreditsAnchor": true
+  },
+  "SystemBrowserLaunchConfirmed": false,
+  "SystemBrowserCheckLimitation": "Windows UI helper capture timed out; no assertion of actual F1/click dispatch. Both handlers use the same shell-open method.",
+  "EncodingAlgorithmsChanged": false,
+  "Portable": {
+    "Success": true,
+    "Files": 287,
+    "AllArchiveContentsMatch": true,
+    "OfflineHelpIncluded": true,
+    "CleanRoot": true,
+    "Bytes": 132039785,
+    "SHA256": "3bad92bab5461a106f8672a9dc0dfaf5caf005902c2f3c022a04c1f3c90ea3a9"
+  }
+}

@@ -1,0 +1,509 @@
+XDC Studio 0.7.2 — old mode label and fork preparation, 25.10.2026
+
+Flat-palette encoding is now labelled "old mode" in RU/EN and help. JSON
+CompositeAlgorithm=legacy and the encoding algorithm remain unchanged.
+MainForm smoke on MIR passes 22 preview updates, exact old mode label,
+RU/EN help, automatic preview, short B&W/Tandy conversions, sound, seeking,
+overwrite No/Yes and footer bounds at 100% / 150%.
+
+Current tests/run.ps1 passes 113 core cases / 414 frames, output transaction
+checks and 167 temporal/mask contracts. The new synthetic integration suite
+generates its own video and tone, verifies all three profiles plus old mode
+and late-CGA half-height blue noise, 60 frames each. Independent decoder,
+audio extraction, random seeks, exact 8088/disk budgets, overwrite refusal,
+empty TEMP and offline help all pass. No user video is required by CI.
+NuGet restore used cached packages; its optional online vulnerability lookup
+was unavailable in the local environment (NU1900). Build and tests succeeded.
+
+The local fork retains all 26 upstream commits and original Pascal, template,
+licence, palettes and compiled binaries unchanged. Windows CI is prepared
+with pinned actions and read-only repository permissions; no hosted Actions
+run or GitHub publication has been performed. Current report: docs/validation/0.7.2.json.
+
+----- Historical 0.7.1 results -----
+XDC Studio 0.7.1 — offline help, 25.10.2026
+
+Added a bottom-right Help button on the main action row and the F1 shortcut.
+Both open the local HTML page in the system browser, using the current RU/EN
+interface language. Missing files / shell launch errors show a localized
+message. Help remains available before selecting a video and during conversion.
+Two offline pages share local CSS; there are no scripts, external fonts or
+remote resources. Includes quick start, all interface options, profiles,
+NTSC preview versus encoding, player controls, troubleshooting, optional CLI
+notes and a dedicated acknowledgement to Jim Leonard with original XDC links.
+
+Release build passes. MainForm smoke run on MIR: 22 preview updates, RU/EN
+help paths, button alignment and visibility at 1x / 1.5x, conversion, playback,
+audio, seek, overwrite acceptance/rejection and existing settings all pass.
+An initial footer layout left unnecessary space; the final single action-row
+layout removes it. HTML structure, unique anchors, all local link targets,
+matching sections and offline resource paths pass. Russian/English pages,
+language switching and the credits anchor were visually checked in a browser.
+The Windows UI helper could not capture the separately launched native test
+window, so actual F1/click dispatch to the system browser was not confirmed
+by that helper. Localized path selection and button layout were verified by
+the application's smoke run; the same OpenHelp method serves both handlers.
+Encoding algorithms are unchanged from 0.7.0; full MIR results below apply
+to that algorithm version. Reports: tests/help071/final-results.json.
+
+----- Historical 0.7.0 results -----
+XDC Studio 0.7.0 — temporal NTSC stabilization and dither masks, 25.10.2026
+
+New behaviour
+Added Bayer 4x4 and a deterministic periodic 8x8 blue-noise rank mask, built
+with void-and-cluster relaxation. Bayer 8x8 remains the default. Each mask
+has its own candidate measurements through the existing NTSC decoder.
+All masks remain fixed in screen coordinates: no random noise between frames.
+
+Composite/NTSC stabilization defaults to 50% (0..100). It compares source
+changes at full 8-bit precision, rendered candidate and actual reconstructed
+VRAM. Near-equivalent 4x4 regions may be retained; visible improvements are
+prioritized per estimated 8088 update cost. Exact encoder cycle/byte budgets
+still apply. Large source changes release history; each output part starts
+with fresh history. This is a heuristic, not optical-flow compensation or
+a globally optimal update schedule. High strengths can increase persistence.
+Zero disables both retention and the new priority order. Bayer 8x8 / zero
+is byte-identical to 0.6. Mono, Tandy and legacy colour mode ignore stability.
+Still preview shows colour/mask selection; temporal effects require XDV playback.
+
+Finished MIR.webm comparison
+Full source: 201.38 seconds, 640x480 VP9/Opus. Output: 6,042 frames / 201.4 s,
+160x200 Composite, 30 FPS, 22,050 Hz U8 mono, 150 KiB/s, integrity 75%, early
+CGA, neutral colour controls, 100% dither, stability 0 or 50 as indicated.
+Every output was independently decoded; all comparisons use the SAME NTSC
+display model, hue 0 and chroma 1. Colour metric: mean squared Oklab error
+of linear-light 8x8 logical-pixel block averages on 202 frames across the
+complete XDV (every 30th frame). Fine detail uses 2x2 blocks instead.
+
+Variant          Colour error    Detail error   XDV bytes    Convert seconds
+Bayer 8x8 / 0    .0015313362     .0058139504     21,813,146       4.873
+Bayer 8x8 / 50   .0010779810     .0049563041     21,180,826      93.020
+Bayer 4x4 / 0    .0014836252     .0058005633     21,769,114       3.628
+Bayer 4x4 / 50   .0010834795     .0049571325     21,174,170      84.885
+Blue noise / 0   .0014834130     .0064349941     21,783,962       4.809
+Blue noise / 50  .0010838099     .0056122960     21,172,122      86.374
+
+Default versus 0.6: colour error -29.61%, fine-detail error -14.75%, file
+size -2.90%. Bayer 4x4 is a comparable alternative. Blue noise changes the
+texture but does not win every scene and retains less fine detail here.
+Stabilization is substantially slower: about 85-93 s instead of 4-5 s for
+the complete MIR on this PC. Peak converter working set: 64-99 MiB for
+these six runs (FFmpeg child memory is not included).
+
+Motion metric: squared error of successive Oklab block changes relative
+to source changes; every frame of three 90-frame excerpts, with full-stream
+decoder state preserved. Lower is better. This is not a perceptual flicker
+percentage, and no physical 8088/CGA/CRT capture was used.
+Variant             30-33 s         80-83 s         150-153 s
+Bayer 8x8 / 0     .00002397982     .00052605210     .00251524290
+Bayer 8x8 / 50    .00002354770     .00007292893     .00167726029
+Bayer 4x4 / 50    .00002280163     .00006093298     .00168253611
+Blue noise / 50   .00002486773     .00009574354     .00183380354
+Default temporal error decreases by 1.80%, 86.14%, 33.32%, respectively;
+equal-frame pooled decrease 42.13%. Blue is 3.70% worse than old Bayer in
+the first excerpt. No claim of universally reduced flicker.
+comparison.mp4: 9 seconds, 270 frames, 960x520 H.264, silent five-way visual
+comparison of source, 0.6, and the three stabilized masks; made via RAM pipe.
+
+Validation
+167 temporal/mask contract checks pass: both CGA models, all masks, rank
+coverage, repeatability, endpoints, cancellation, invalid input, slow colour
+variation retention, cuts, moving-edge convergence and exact encode budgets.
+Blue low-frequency spectral energy 15.299 vs 321.299 for averaged white
+rank shuffles. Existing native core suite: 113 cases / 414 encoded frames.
+
+Eight complete MIR encodes pass: all three target profiles and six Composite
+mask/stability combinations. Independent decoder and application reader
+agree on all video/audio hashes; seven random seeks each; source audio
+matches independent FFmpeg extraction. CPU and 150 KiB/s budgets respected.
+Mono and Tandy are byte-identical to 0.6; Composite legacy to 0.5. Repeated
+late-CGA conversion matches exactly; zero strength equals disabled dithering.
+Adjusted gamma/saturation/strength, half height, early/late cards and invalid
+settings checked. Cancellation preserves an existing output. Three split
+parts verified; part 2 exactly matches a standalone encode of that segment.
+TEMP stays empty, no intermediate BMP/WAV, partial or rollback files remain.
+
+Actual MainForm: 22 preview updates; new mask choices and stability value,
+all three profiles, RU/EN, seeking, colour reset, original-frame preservation,
+overwrite No/Yes, and button bounds at 1x/1.5x pass. WM_PRINT omits some
+native ComboBox text in diagnostic images; selected values are asserted.
+Four preview-vs-conversion cases match. Player checks pass for all profiles
+and blue noise: playback clock, audio, volume, eight seek/resume cycles,
+pause, stop and end. The first TemporalContracts failure was diagnosed and
+fixed; its harness now catches errors rather than showing a Windows crash
+dialog. The subsequent complete 167-check run passes.
+
+Machine-readable results: tests/ntsc07/final-results.json, comparison.json,
+contracts.json, safety.json, final-integration/results.json.
+
+----- Historical 0.6 results -----
+XDC Studio 0.6.0 — NTSC-aware composite encoding, 25.10.2026
+
+New behaviour
+CGA colour selection: NTSC / early CGA (default), NTSC / late CGA, or the
+unchanged 0.5 palette algorithm. 7,696 Bayer patterns are measured through
+the NTSC decoder. Selection evaluates displayed colour and texture, not
+just mixtures of the old ideal palette. Gamma/saturation precede matching;
+dither strength limits minority coverage and re-optimizes the pattern.
+Fixed patterns, no temporal noise, BMP/WAV intermediates or disk LUT cache.
+Monitor hue/chroma affect viewing only. XDV format and 8088 compiler unchanged.
+
+MIR comparison methodology
+Both algorithms receive the same RGB frames, neutral colour controls,
+160x200, 30 FPS, early CGA model at hue 0/chroma 1. Both outputs are rendered
+with the SAME NTSC decoder. Source RGB is scaled to the same logical size.
+Metric: mean squared Euclidean Oklab distance after linear-light averaging
+of 8x8 logical-pixel blocks (32x8 physical dots). A separate 2x2-block metric
+checks finer detail; this is not Delta E 2000 or a physical monitor measurement.
+
+Six prepared frames at 30,50,80,110,150,180 seconds:
+Mean colour error reduction 88.18%; finer-detail error reduction 67.13%.
+Late CGA, same six frames, matching late display model: 81.32% reduction.
+
+Finished XDV: sample every 30th frame across all 6,042 packets (202 samples).
+Old mean colour error 0.00464330; new 0.00153134: reduction 67.02%.
+Old finer-detail error 0.01344577; new 0.00581395: reduction 56.76%.
+These include delta-update delays under the same 150 KiB/s and 8088 budgets.
+New full Composite: 21,813,146 bytes versus 21,474,202 (+1.58%).
+
+Motion: every frame in three 90-frame segments of the full streams.
+Temporal metric = squared error of successive Oklab block changes relative
+to source changes (lower is better), with no reset of the XDV decoder state.
+Start   old colour  new colour  old temporal  new temporal
+ 30s    .00372179   .00042467   .00003653    .00002398
+ 80s    .00412600   .00087070   .00020527    .00052605
+150s    .00665472   .00195681   .00427032    .00251524
+Thus colour improves in all three, but temporal error rises in the 80s scene.
+No claim of universally reduced flicker. Independent clips starting with black
+VRAM are also measured in quality.json; their startup transients are included.
+Still input repeated after seeking yields identical output patterns.
+
+Validation
+46 quantization/comparison checks; 44 signal-model checks; 43 legacy colour
+checks. Early/late cards, endpoints, strength zero vs disabled, intermediate
+strength, gamma, display-setting independence, odd-bank half-height output,
+cancellation without publishing partial tables and invalid input rejection.
+Actual MainForm: all three colour choices update preview; RU/EN, controls,
+source preservation, seek, output confirmation, result playback and 1x/1.5x
+button bounds pass. Native WM_PRINT omits some ComboBox text in saved UI
+renders; selected values are asserted directly. Preview pixels match the
+conversion path for full/half Composite, B&W and Tandy.
+Four player checks (three full profiles plus late-CGA clip): audio, pause,
+stop, volume and repeated seeks passed.
+
+Full conversion results on this PC (include cold table construction)
+MIR_CGA: 6042 frames, 4.860 s, 21813146 bytes, app peak 64.0 MiB
+MIR_BW: 6042 frames, 5.597 s, 18599322 bytes, app peak 67.7 MiB
+MIR_TND: 6042 frames, 3.049 s, 21190042 bytes, app peak 62.7 MiB
+MIR_ADJ: 6042 frames, 4.508 s, 21354906 bytes, app peak 63.4 MiB
+LEGACY: 6042 frames, 3.670 s, 21474202 bytes, app peak 62.8 MiB
+
+All full streams: 6,042 frames / 201.4 seconds, mono 22050 Hz PCM audio.
+Independent Python packet/8088 decoder and C# reader agree on all video/audio
+hashes and seven random seeks per stream. All CPU and disk budgets pass;
+new Composite peaks at 150 KiB/s and 79,545.4 cycles (budget 79,545.455).
+Audio matches independent FFmpeg extraction. Legacy Composite, B&W and
+Tandy files are byte-identical to 0.5.0. Adjusted colours, half height, late
+CGA, zero/disabled dither and repeated conversion also pass. TEMP stays empty.
+First NTSC table in the dedicated comparison run: 1.674 seconds; later frames
+use RAM lookups. Timings are machine-specific; conversion timings were taken
+with other test processes present. Peak application memory excludes FFmpeg.
+
+Portable
+Top level: EXE, two readmes, app/ and docs/. Runtime, tools and icon are kept
+as in 0.5. All three profiles, native x64 RAM processing and the original DOS
+player remain available. No setup, DOSBox, global .NET or TEMP extraction.
+No new physical CGA/CRT capture was available; this is improvement against
+our representative NTSC model, not a calibrated hardware accuracy claim.
+Detailed reports: tests/ntsc06/final-results.json, quality.json,
+encoded-quality.json in the source archive. Comparison images are saved
+alongside these reports in the working test folder.
+
+---- Historical reports ----
+
+﻿XDC Studio 0.5.0 — CGA/NTSC, icon and portable layout, 25.10.2026
+
+NTSC
+44 checks passed: all 16 steady-state patterns against an independent
+closed-form reference; black/white calibration; alternating-dot suppression;
+phase and hue order; old/new DAC; saturation zero; cross-pixel filtering;
+scanline isolation; random input determinism; no VRAM modification;
+unchanged monochrome/Tandy rendering.
+Mean core render time: 4.715 ms;
+maximum in this 100-frame local sample: 8.419 ms.
+This is a local timing, not a hardware-independent performance guarantee.
+Sources, assumptions and limits: docs/CGA-NTSC.txt.
+No comparison against new physical CGA capture was performed.
+
+MIR.webm
+MIR_CGA: 6042 frames, 3.153 s, 21474202 bytes
+MIR_BW: 6042 frames, 5.602 s, 18599322 bytes
+MIR_TND: 6042 frames, 2.894 s, 21190042 bytes
+MIR_ADJ: 6042 frames, 2.926 s, 21420954 bytes
+Full outputs: 6042 frames, 201.4 s, 30 FPS, audio 22050 Hz, 150 KiB/s.
+All four full results (including the adjusted Composite variant) are
+byte-identical to 0.4.0. This change affects display, not XDV encoding.
+All packets decoded independently in Python and C#, hashes agree; seven
+random seeks per file. Audio agrees with independent source extraction.
+The 8088 and data-rate budgets are respected. Half-height, adjusted B&W/
+Tandy, zero strength vs no dithering and repeatability also passed.
+TEMP remained empty; no BMP/WAV intermediates or DOSBox dependency.
+
+UI and playback
+Main UI: Russian/English, all colour controls, auto-preview, source seek,
+source/result divider, NTSC/palette switch, monitor tuning and reset.
+The original side is unchanged; prepared frames match the normal conversion
+path. Output confirmation No/Yes and 1x/1.5x button layout passed.
+Monitor dialog: actual model/hue/saturation controls, disabled controls in
+palette mode, Reset, visible buttons and Russian labels checked.
+Full MIR player tests for all three profiles: Play/Pause/Stop, clock/audio,
+eight seek/resume cycles, volume preservation and end of file passed.
+Native WM_PRINT renders omit some ComboBox text; this known render limitation
+is not the application's displayed selection.
+
+Portable layout
+Top level: XdcConverter.exe, README.txt, README.en.txt, app/, docs/.
+All runtime DLLs and tools are in app/. The native .NET apphost points to
+app/XdcConverter.dll; no second launcher process and no runtime extraction.
+Tested in another path containing spaces/Cyrillic with relative CLI input/
+output paths, an absent DOTNET_ROOT and empty TEMP. Exit status/output correct.
+The relocated test uses NTFS hardlinks to avoid redundant large file writes.
+
+Icon
+PC 5150 + user-supplied Bad Apple frame, generated/edited by built-in image_gen.
+ICO contains 16/20/24/32/40/48/64/128/256 px, 32-bit transparent PNG images.
+All nine image payloads found in the native x64 EXE resources. The same icon
+is embedded in the forms. Source PNG/ICO/prompts are included in assets/.
+
+Detailed results: tests/ntsc05/final-results.json in the source archive.
+
+---- Historical reports ----
+
+XDC Studio 0.4.0 — цвет и сравнение, 24.10.2026
+
+Проверено на полном MIR.webm: 640x480, 201,38 с, VP9 + Opus.
+Все полные XDV: 6042 кадра, 201,4 с, 30 FPS, PCM U8 mono 22050 Гц,
+поток не выше 150 КиБ/с, целостность 75%. MIR_ADJ: гамма 1,15,
+насыщенность 120%, сила дизеринга 65%; остальные нейтральные настройки.
+
+MIR_CGA  6042 кадров; 21,474,202 байт; 3.092 с; приложение 62.9 МиБ
+MIR_BW   6042 кадров; 18,599,322 байт; 5.441 с; приложение 76.4 МиБ
+MIR_TND  6042 кадров; 21,190,042 байт; 3.066 с; приложение 62.7 МиБ
+MIR_ADJ  6042 кадров; 21,420,954 байт; 3.086 с; приложение 62.6 МиБ
+Время — локальный замер, зависит от машины и нагрузки. Память указана
+только для приложения, без дочерних FFmpeg. Промежуточных BMP/WAV нет;
+отдельная TEMP осталась пустой. Цветовые таблицы имеют ограниченный размер.
+
+• Независимый Python-декодер восстановил все кадры и звук; бюджеты
+  процессора/потока соблюдены. C#-проигрыватель дал те же хеши кадров
+  и звука, включая 7 произвольных переходов для каждого результата.
+• Звук совпал с независимым извлечением PCM из MIR при том же временном
+  диапазоне и частоте. Для Opus команда эталона также использует -ss 0,
+  как конвертер: отсутствие этой опции меняет обработку начала потока.
+• Проверены 160x100 с регулировками, корректированный B&W и Tandy,
+  сила 0% = «без дизеринга», повторяемость результата и отказ при
+  недопустимых параметрах. Изменения настроек влияют на готовый XDV.
+• 43 проверки: направление гаммы, сохранение глубоких теней при подъёме,
+  чёрный/белый, промежуточная сила, стабильный узор, диапазоны параметров
+  и эталонные значения Oklab; сравнение шести кадров MIR в двух палитрах.
+
+Оценка цвета
+Сравнивался средний линейный RGB в блоках 8x8 исходного и палитрового
+кадра, затем квадрат расстояния Oklab. Кадры: 30, 50, 80, 110, 150, 180 с.
+Эталон прежнего алгоритма — RGB nearest + Bayer из версии 0.3.1.
+Composite: средняя ошибка 0.0026139 -> 0.0003098.
+Tandy: средняя ошибка 0.0012288 -> 0.0003276.
+Это метрика средних оттенков при пространственном смешивании, не оценка
+всей картинки, резкости, движения или реального композитного монитора.
+
+Предпросмотр и интерфейс
+• Сравнение получает обе половины из одного декодированного кадра.
+  Подготовленная половина побитно совпадает с обычным трактом обработки:
+  Composite 160x200/160x100, B&W/crop, Tandy/stretch.
+• Гамма, насыщенность и сила меняют результат; исходная половина неизменна.
+  Сброс восстанавливает исходный подготовленный кадр; сравнение отключается.
+• RU/EN, автоматическое обновление, перемотка исходника, конвертация,
+  подтверждение перезаписи (ответы через тестовую функцию), сохранение
+  старого результата при отказе, кнопки при 1x/1,5x — PASS.
+• Воспроизведение полных MIR для трёх профилей: Play/Pause/Stop, звук,
+  8 циклов перемотки с сохранением громкости и достижение конца — PASS.
+• Компоновка проверена рендерами собственной формы. Native WM_PRINT
+  пропускает текст некоторых ComboBox; это ограничение тестового рендера.
+
+Новый композитный предпросмотр использует прежнюю палитру автора XDC;
+аналоговая модель NTSC не добавлена. Реальный 8088 в этом этапе не проверялся.
+Подробный отчёт: tests/color04/final-results.json в архиве исходников.
+
+---- История проверок предыдущих версий ----
+
+XDC Studio 0.3.1 — плеер и перезапись, 24.10.2026
+
+Плеер
+• Отдельные кнопки с векторными чёрными значками Play / Pause / Stop слева.
+• Справа громкость: ширина самого ползунка 124 px при 96 DPI,
+  приблизительно втрое короче прежнего. Уровень сохраняется при перемотке.
+• Stop останавливает звук и возвращает видеопозицию на кадр 0.
+• Проверены реальные обработчики кнопок, пауза, Stop, звук, конец ролика,
+  8 циклов перемотки и сохранение громкости для всех трёх профилей MIR.
+
+Главное окно
+• Кнопки выбора/сохранения одинаковой ширины 86 px и высоты 26 px.
+  Текст не обрезается; поля путей получили дополнительное место.
+• Проверен RU/EN, автопредпросмотр, обе перемотки, состояние кнопок,
+  обычная и увеличенная в 1,5 раза компоновка.
+
+Перезапись
+• В GUI при конфликте XDV/отчёта/лога/BAT вызывается подтверждение.
+  При ответе «Нет» предыдущий файл и его открытый просмотр сохраняются.
+  При ответе «Да» просмотр закрывается и выполняется новая конвертация.
+• GUI-тест повторной конвертации меняет профиль B&W на Tandy под тем же
+  именем; подтверждение вызывается для каждой попытки, новый XDV проверен.
+  В автоматическом тесте ответ на системный диалог задаётся тестовой функцией.
+• CLI без Overwrite=true отклоняет перезапись. С явным разрешением заменяет
+  результат и метаданные. Проверена перезапись одного XDV и трёх частей.
+• Отмена через 600 мс сохраняет SHA-256 всех прежних файлов результата.
+• Тест блокировки второго файла заставляет замену прерваться после первого;
+  первый файл восстановлен, второй сохранён. Проверено внешнее изменение
+  файла между подготовкой и фиксацией. Во всех штатных тестах .partial и
+  .rollback после завершения отсутствуют.
+• Старые и новые видео не копируются для замены: новые XDV пишутся рядом,
+  затем используются File.Replace/File.Move и восстановление при ошибке.
+  Авария ОС/питания посреди фиксации не является проверенным сценарием.
+
+Рендеры формы просмотрены для проверки новых кнопок и положения громкости.
+Ограничение WM_PRINT для вложенных ComboBox описано в отчёте 0.3 ниже.
+Машинный отчёт: tests/ui031/final-results.json в архиве исходников.
+
+--------------------------------------------------------------------
+XDC Studio 0.3.0 — интерфейс и просмотр XDV, 24.10.2026
+
+Проверено на MIR.webm, всех трёх профилях и исходном MIR.XDV.
+
+Интерфейс
+• Удалены верхний баннер и пояснение про RAM; кнопка обновления убрана.
+• Компактная форма 990x586 клиентских пикселей при 96 DPI.
+• RU/EN переключает подписи, списки, сообщения и проигрыватель,
+  сохраняя настройки. Язык сохраняется рядом с EXE.
+• Ползунок исходника меняет время предпросмотра; изменения параметров
+  вызывают обновление с задержкой 180 мс и отменой устаревших запросов.
+• Лог светлый с тёмным текстом, помечен «Лог / Log».
+• Нижние кнопки целиком видны при обычной и увеличенной в 1,5 раза
+  геометрии формы. Включён PerMonitorV2, автоматическая высота подвала.
+  Масштабирование проверялось программно, не сменой DPI всего рабочего стола.
+
+Просмотр результата
+• Отдельное окно открывается после конвертации; поддерживает паузу,
+  перемотку, переход по кадрам, выбор части, звук и громкость 0–100%.
+• Все 6042 кадра и звук каждого из CGA/B&W/Tandy, а также оригинального
+  MIR.XDV совпали с независимым Python-декодером по SHA-256.
+• По 7 переходов в произвольном порядке для каждого из четырёх файлов
+  совпали с последовательным декодированием; кэш остался в пределах
+  64 контрольных кадров, около 1 МиБ.
+• Для каждого профиля проверены ход воспроизведения, удержание кадра
+  на паузе, 8 циклов перемотки/старта, конец ролика.
+• Громкость 30% подтверждена через открытый Windows audio handle;
+  сохраняется при всех 8 переходах. Другие аудиоустройства не регулируются.
+• Интерпретатор не запускает машинный код XDV на процессоре Windows.
+  Он восстанавливает разрешённые команды записи в видеопамять.
+• Просмотр не моделирует задержки накопителя, CGA snow и аналоговый тракт.
+
+Регрессии и ограничения проверки
+113 случаев ядра (414 кадров) прошли. Повторная конвертация трёхсекундного
+MIR в B&W даёт побайтно тот же XDV, что версия 0.2.0.
+Встроенный тест формы подтвердил источник, автоматическое обновление,
+RU/EN, три профиля, обе перемотки, звук, кнопки и восстановление состояния.
+
+Windows Computer Use дважды вернул при захвате окна:
+window capture timed out: timed out waiting on channel
+Значения живых контролов проверены через accessibility. Рендеры формы
+использованы для проверки расположения; WM_PRINT некоторых вложенных
+ComboBox не отображает текст выбора, хотя значения контролов присутствуют.
+Это ограничение диагностического рендера. Снимок полного рабочего окна
+через этот канал проверить не удалось.
+
+Машинный отчёт: tests/ui03/final-results.json в архиве исходников.
+Ниже сохранены подробности проверки кодирующего ядра версии 0.2.
+
+--------------------------------------------------------------------
+XDC Studio 0.2.0 — результаты проверки, 24.10.2026
+
+Полный MIR.webm, все профили
+Исходник: VP9 640x480, 30 FPS, Opus. Видеодорожка 201,38 с.
+Выход: 6042 пакета, 201,4 с, 30 FPS, моно U8 22050 Гц,
+150 КиБ/с, целостность 75%, Bayer, вписывание с сохранением пропорций.
+
+Профиль       Время ядра/подготовки   Размер XDV      Пик RAM приложения
+CGA Composite       2,845 с         20 497 818 Б        60,51 МиБ
+CGA RGB / B&W       5,204 с         18 344 858 Б        58,13 МиБ
+Tandy               3,148 с         19 638 170 Б        60,40 МиБ
+
+Время включает FFmpeg, квантование, нативную компиляцию, запись и проверку
+XDV; не включает запуск приложения и начальный ffprobe. Это измерение
+на текущем ПК с тёплым файловым кэшем, не универсальная оценка скорости.
+Пик RAM указан только для процесса приложения, без двух процессов FFmpeg.
+Первый этап для полного чёрно-белого MIR занимал около 256 с.
+
+Проверка данных
+Независимый Python-интерпретатор восстановил все 18126 видеопакетов
+трёх полных файлов. У всех корректны заголовок, индекс, обращения к
+видеопамяти, выравнивание и звуковые пакеты. Максимальный поток 150 КиБ/с.
+Независимо рассчитанные максимумы тактов: CGA 79545,3; B&W 79543,4;
+Tandy 79545,3 при бюджете 79545,455. Максимум видео — 4385 байт/пакет.
+
+SHA-256 звука полного ролика у всех профилей:
+5706cc7f4cf55b36d4be475bb5ce9098d7f13a8abaa85f146e681de8c29be15d
+Звук побайтно совпал с первым этапом при тех же настройках.
+Оригинальный предоставленный MIR.XDV имеет другую подготовку и поток
+240 КиБ/с, поэтому его побайтное совпадение не является критерием.
+
+Сравнение с DOS-компилятором, фрагмент 30–36 секунд
+Параметры подготовки идентичны первому этапу. Звук совпал побайтно.
+Доля различающихся пикселей восстановленных кадров Windows/DOS:
+CGA Composite 0,02465%; B&W 0,02656%; Tandy 0,02139%.
+Доля несовпадений с подготовленным целевым кадром (DOS -> Windows):
+CGA 2,72693% -> 2,72703%; B&W 0,87977% -> 0,87275%;
+Tandy 2,59189% -> 2,58979%.
+Это проверка сохранения поведения порта, а не субъективная оценка качества.
+Различия ожидаемы после исправления границ и учёта служебных тактов.
+
+Оригинальный XDC_PLAY
+Все три шестисекундных результата проиграны оригинальным XDC_PLAY.EXE
+в отдельном тестовом DOSBox-X: CGA/CGA/Tandy, Sound Blaster 2, IRQ 7,
+DMA 1, cycles=fixed 12000. Все вернули код 0 и дошли до конца за ~7,4–7,7 с
+с учётом запуска. Звук эмулятора был отключён; проверялся PCM в файле.
+DOSBox-X использован исключительно для проверки проигрывателя и не
+входит в новый дистрибутив. На физическом 8088 тест пока не проводился.
+
+Ядро и интеграция
+• 113 случаев, 414 синтетических кадров: точная сходимость, лимиты тактов
+  и байтов, все профили и 160x100, шум, полосы, последний пиксель,
+  двухбайтные изменения, белые/чёрные кадры, повреждённый пакет.
+• MP4 с кириллицей и пробелами, Tandy, 60 FPS, 32000 Гц, crop/deinterlace.
+• MKV без звука, растяжение, отключённый дизеринг.
+• Полностью чёрный ролик: 30 корректных пустых видеопакетов и тишина.
+• 160x100, 23,976 FPS, три части 30+30+12 кадров, тишина.
+• Повторная конвертация даёт побайтно одинаковый XDV.
+• Отмена через 500 мс останавливает цепочку и удаляет *.partial.
+• Отказ от перезаписи сохраняет существующий файл без изменения.
+
+RAM и интерфейс
+В новом portable нет DOSBox и XDC_COMP. В исходниках отсутствуют пути
+записи BMP/WAV. Каналы FFmpeg и кадры хранятся в RAM, выходной XDV пишется
+последовательно. Отдельная TEMP осталась пустой при полных конвертациях
+и интеграционных тестах. Файлы *.partial после завершения/отмены отсутствуют.
+
+Тест GUI: Success=true, PreviewLoaded=true, ProfileCount=3,
+MediaLoaded=true, ControlsRestored=true. Дополнительно прочитаны элементы
+живой формы: новые подписи RAM присутствуют, настройки DOSBox/BMP/WAV
+убраны. Визуальный снимок окна недоступен: Windows capture дважды вернул
+«window capture timed out: timed out waiting on channel».
+
+Подробные машинные отчёты: tests/native/*results.json в архиве исходников.
+
+Проверка portable-архива
+282 файла после распаковки совпали с исходной папкой по SHA-256.
+Из папки с пробелом успешно выполнен GUI-тест с предпросмотром и
+конвертацией MIR: 90 пакетов, 3 с, три профиля в списке, кнопки восстановлены.
+В отдельной TEMP файлов нет. DOSBox и XDC_COMP в архиве отсутствуют.
+Дополнительно проверено 8000 Гц / 60 FPS: корректное выравнивание
+до 7980 Гц, 133 байта звука в пакете, 60 пакетов за секунду.

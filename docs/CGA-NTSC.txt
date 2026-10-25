@@ -1,0 +1,126 @@
+CGA/NTSC rendering and encoding — XDC Studio 0.7.0
+
+Scope
+Standard XDC mode 1: BIOS mode 6, 640x200 one-bit video, white foreground,
+black border, colour burst enabled. Logical 160x200 palette indices encode
+four adjacent black/white dots. The preview decodes reconstructed video RAM,
+including dropped/delayed updates in the finished XDV. Mode 2 and mode 3
+retain their direct monochrome/RGB rendering and unchanged quantization.
+Composite quantization now uses the signal model; the XDV format is unchanged.
+
+Signal path (independent implementation in src/CgaNtsc.cs)
+1. Expand CGA banks, MSB first. 14.3181818 MHz samples, 3.57954545 MHz colour
+   subcarrier, four sample phases. Fixed phase per scanline, as in mode 6.
+2. Generate signal from neighbouring 0/1 dots and their transition voltage.
+   Published measurement samples for 00, 01, 10, 11 transitions and the four
+   intensity constants come from Andrew Jenner's CGA model (source below).
+   Early CGA uses chroma + intensity; late CGA uses DAC resistor weights.
+   Black and steady white normalize the signal; black padding models the border.
+3. Synchronous quadrature demodulation. A 33-tap Blackman-windowed sinc
+   limits chroma bandwidth to 1 MHz. Subtract remodulated chroma from luma,
+   then apply a 17-tap 3 MHz luminance filter. Filtering crosses nibble/byte
+   boundaries and never leaks into another scanline.
+4. Align phase to the colour-6 burst and mode-6 pixel boundary. Rotate to
+   NTSC I/Q, apply monitor hue and saturation, then YIQ -> display RGB.
+   Clip only at display output. Composite display uses bilinear enlargement
+   to 4:3; raw pixels and the encoded stream remain untouched.
+
+Display defaults: early CGA, hue 0, chroma multiplier 1. Both preview windows share
+settings. Alternative late CGA and legacy flat-palette views are available.
+No additional decoding library or DOS emulator is linked into the application.
+The FIR implementation is project code, not copied emulator implementation.
+
+NTSC-aware encoding (src/NtscQuantizer.cs)
+The default composite encoder targets early CGA at hue 0/chroma 1. Late CGA
+is an explicit alternative. Independent monitor controls never affect bytes.
+The old mode option uses the original flat-palette colour matcher. Mode 2/3 are unchanged.
+
+For each card/mask, measure 7,696 screen-anchored 8x8 candidates: 16 solid bit
+patterns plus 16*15 ordered pairs at minority counts 1..32 out of 64 cells.
+Each 8x8 logical tile is repeated horizontally. Render its eight scanlines
+through CgaNtsc, then measure a central period with complete filter context.
+This includes nibble transitions, luma/chroma bandwidth and RGB clipping.
+Average physical samples in linear sRGB; map the mean to Oklab. A texture
+term measures Oklab variance among the 64 four-dot logical cells. Choose the
+candidate minimizing squared Oklab distance + 0.08 * texture variance.
+This reduces high-contrast speckling without introducing error diffusion.
+
+Dither strength permits minority counts up to round(32*strength/100),
+rounded to the selected mask's coverage step.
+At zero (or Dither=none), only the 16 solid patterns compete. At full strength,
+all candidates compete. Every strength is re-optimized under the model.
+Gamma is applied before 5-bit RGB reduction; saturation is adjusted in linear
+light. The chosen plan is expanded to a per-job RGB/threshold lookup. Models and
+up to eight plan tables stay in bounded RAM caches. No disk LUT or image cache.
+The stateless matcher has no randomized temporal dither. Still previews are
+repeatable. Optional sequential stabilization is described below.
+
+Scope of the optimization: it models neighbours inside repeating two-colour
+tiles. It does not run a global per-image or temporal optimization. Real image
+edges can differ from the tile prediction, and 8088/disk budgets can delay
+updates. Half-height targets visible scanlines; black alternate lines remain.
+Tests therefore also decode actual XDV streams and measure motion separately.
+
+Masks and sequential stabilization (0.7)
+DitherMask.cs contains Bayer 8x8, Bayer 4x4 and a fixed 8x8 blue-noise mask.
+The latter is generated once with a deterministic seed by periodic Gaussian
+void-and-cluster relaxation/rank assignment, sigma 1.5 logical pixels.
+Bayer 4x4 uses 1,936 candidates with coverage steps of 4/64. The other masks
+use 7,696. Measured NTSC colour and texture are recalculated per mask.
+A spectral test checks low-frequency energy against 64 shuffled white masks.
+This is a small periodic mask; it does not claim ideal continuous blue noise.
+
+NtscStabilizer uses the encoder's reconstructed VRAM, fresh quantized pixels
+and full-precision gamma-adjusted/saturation-adjusted source colour. Source
+motion is not measured on the quantizer's 5-bit RGB cells. Each active frame
+renders both actual and proposed VRAM through the fixed encoding NTSC model.
+4x4 logical regions can retain existing bytes when source motion is small,
+mean displayed colour stays close and the colour-error increase is bounded.
+A per-byte work estimate includes replay cycles and amortized setup; expensive
+isolated changes get a larger retention allowance. Whole coherent regions
+are retained to avoid destroying a mixture by selecting individual dots.
+The source-motion gate and strong-change reset limit trails; this is not
+optical flow, and extreme settings/content can still show temporal artifacts.
+
+NativeEncoder's optional priority path orders accepted target deltas by
+positive displayed-colour error improvement per estimated replay cycle.
+Prefix sums bound sorting work; residual deltas keep their accepted target's
+priorities. Strong scene changes permit replacing an obsolete pending target.
+The Integrity acceptance rule otherwise remains. Exact emitted 8088 cycles,
+packet bytes and decoding consistency are still enforced by the existing core.
+Holding and ordering are heuristics, not a global rate/distortion optimum.
+Zero stability preserves the original core path exactly. Non-NTSC modes do
+not invoke the stabilizer. Every output segment starts with fresh history.
+Single-frame preview is stateless; the XDV player shows the actual history.
+No BMP/WAV, on-disk masks/LUTs, frame cache or DOSBox are introduced.
+
+Void-and-cluster reference (independent implementation):
+https://cv.ulichney.com/papers/1994-filter-design.pdf
+
+Sources
+XDC mode setup (mode 6 + colour burst):
+https://github.com/MobyGamer/XDC/blob/56a5dc1951e1f0b8747fe8fa4614c607e2f91c8b/XDC_COMM.PAS
+CGA signal behaviour and artifact colours, Andrew Jenner:
+https://www.reenigne.org/blog/1k-colours-on-cga-how-its-done/
+CGA revisions and output resistor weights:
+https://www.reenigne.org/blog/comparison-of-cga-card-versions/
+Numerical transition measurements and intensity constants:
+https://github.com/reenigne/reenigne/blob/474aced6e6decd8149972fa517e0e732841f94f8/include/alfe/cga.h
+Only the black/white measurement subset is used; this is not a port of
+that repository's complete CGA/NTSC implementation.
+
+Limits
+This is a deterministic representative monitor model. It does not reproduce
+an individually measured CRT, phosphor persistence/mask, beam convergence,
+RF noise, cable response, sync loss, comb filtering, or programmable nonstandard
+CGA modes. CGA monitors have different hue, gain and filter characteristics.
+We have validated signal invariants, hue order and playback performance; no
+new physical CGA capture was available for direct comparison. The image is
+closer to a composite signal path than a flat 16-colour lookup, but should
+not be described as an exact simulation of any particular monitor.
+
+Validation
+44 signal/renderer checks including all 16 steady patterns, black/white,
+7.16 MHz pattern suppression, phase, hue, saturation, neighbour influence,
+scanline isolation, deterministic random data and unchanged B&W/Tandy.
+MIR renders, full conversions, UI and player tests: TEST-RESULTS.txt.

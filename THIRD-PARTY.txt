@@ -1,0 +1,52 @@
+XDC Studio 0.7.2 — bundled components
+
+Native encoder port and original XDC player
+Upstream: https://github.com/MobyGamer/XDC
+Source revision: 56a5dc1951e1f0b8747fe8fa4614c607e2f91c8b
+https://github.com/MobyGamer/XDC/tree/56a5dc1951e1f0b8747fe8fa4614c607e2f91c8b
+MIT license, Copyright (c) 2014 Jim Leonard; app/licenses/XDC-MIT.txt.
+The compiler algorithm is ported to C# Windows x64 with bounded arrays.
+XDC_PLAY.EXE is the unmodified 16-bit DOS player, copied for the target PC.
+DOSBox-X and XDC_COMP.EXE are not included or required for conversion.
+
+FFmpeg / FFprobe 9.0.2 essentials build by Gyan Doshi
+https://github.com/GyanD/codexffmpeg/releases/tag/9.0.2
+https://www.gyan.dev/ffmpeg/builds/
+Source: https://github.com/FFmpeg/FFmpeg/tree/946fcce07b
+GPL build; see app/licenses/FFmpeg-GPL.txt and FFmpeg-build-README.txt.
+The build includes other libraries. Configuration: ffmpeg.exe -buildconf.
+The supplied executables are launched as separate processes, unmodified.
+
+.NET 10.0.13 Windows Desktop Runtime, self-contained win-x64
+https://github.com/dotnet/runtime/tree/v10.0.13
+https://github.com/dotnet/winforms/tree/v10.0.13
+https://github.com/dotnet/wpf/tree/v10.0.13
+MIT and third-party notices in app/licenses/.
+
+Original notices must be retained when redistributing components.
+For redistribution, provide corresponding source for the exact GPL builds,
+including their bundled libraries, under their respective license terms.
+Binary SHA-256 hashes are recorded in components.sha256.json.
+
+Oklab colour transform
+https://bottosson.github.io/posts/oklab/
+Björn Ottosson's linear-sRGB to Oklab transform, made available by its
+author in the public domain (also offered under MIT). The public-domain
+formula is used in ColorMixer.cs. Palette pair search and model-measured Bayer search are project code.
+
+CGA composite signal model
+Numerical black/white transition measurements and resistor weights credited
+to Andrew Jenner (reenigne). See docs/CGA-NTSC.txt for pinned source links,
+model assumptions and tests. The signal/finite impulse response decoder
+is independently implemented project code; no emulator code is linked.
+
+Application icon
+PC 5150 illustration generated with the built-in image_gen tool and edited
+to display the user's supplied Bad Apple reference frame. Final PNG, ICO
+and generation/edit prompts are included in assets/ in the source archive.
+
+Static blue-noise mask
+Independent implementation of periodic void-and-cluster mask construction,
+following Robert Ulichney's published method and Gaussian filter discussion:
+https://cv.ulichney.com/papers/1994-filter-design.pdf
+No external mask image, library or implementation is bundled.

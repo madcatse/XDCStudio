@@ -1,0 +1,715 @@
+{
+  "Success": true,
+  "Version": "0.6.0",
+  "Signal": {
+    "Success": true,
+    "Checks": 44,
+    "SteadyStateRgb": [
+      "000000",
+      "00731B",
+      "281EF1",
+      "009FFF",
+      "9F0056",
+      "717170",
+      "D01DFF",
+      "999EFF",
+      "4A5400",
+      "21D400",
+      "727272",
+      "40FF82",
+      "FF5200",
+      "D6D200",
+      "FF70EF",
+      "FFFFFF"
+    ],
+    "MeanRenderMilliseconds": 9.127702999999999,
+    "MaximumRenderMilliseconds": 51.696,
+    "HardwareCaptureCompared": false
+  },
+  "Quantization": {
+    "Success": true,
+    "Checks": 46,
+    "ColdTableSeconds": 1.6737693,
+    "LateCgaReductionPercent": 81.32087938165799,
+    "StillReductionPercent": 88.18130278665876,
+    "DetailReductionPercent": 67.12515492436646,
+    "Stills": [
+      {
+        "Time": 30,
+        "OldError": 0.003765931348901327,
+        "NewError": 0.00040595588610300423,
+        "OldDetailError": 0.009463985068758334,
+        "NewDetailError": 0.0028262435108040726,
+        "ReductionPercent": 89.22030572274139
+      },
+      {
+        "Time": 50,
+        "OldError": 0.00395118906504319,
+        "NewError": 0.00043390583718252974,
+        "OldDetailError": 0.012873873563744562,
+        "NewDetailError": 0.0030604717817176697,
+        "ReductionPercent": 89.01834789376785
+      },
+      {
+        "Time": 80,
+        "OldError": 0.0027210586414168135,
+        "NewError": 0.0005538601450550883,
+        "OldDetailError": 0.021979428940312302,
+        "NewDetailError": 0.009295974142302424,
+        "ReductionPercent": 79.6454168012086
+      },
+      {
+        "Time": 110,
+        "OldError": 0.0038770080948064964,
+        "NewError": 0.0003180350207075595,
+        "OldDetailError": 0.010456781991608897,
+        "NewDetailError": 0.0026954517154071673,
+        "ReductionPercent": 91.79689562336513
+      },
+      {
+        "Time": 150,
+        "OldError": 0.003042254258576625,
+        "NewError": 0.00040995185363941803,
+        "OldDetailError": 0.010357619301131651,
+        "NewDetailError": 0.002829592425183099,
+        "ReductionPercent": 86.52473400329065
+      },
+      {
+        "Time": 180,
+        "OldError": 0.003149723149197755,
+        "NewError": 0.000301970943457217,
+        "OldDetailError": 0.009492783454730706,
+        "NewDetailError": 0.0038249460883887673,
+        "ReductionPercent": 90.41277822991745
+      }
+    ],
+    "Motion": [
+      {
+        "Start": 30,
+        "Frames": 90,
+        "Samples": 30,
+        "OldError": 0.01443258152638065,
+        "NewError": 0.010503519355173975,
+        "OldTemporalError": 0.010207921697688362,
+        "NewTemporalError": 0.010498399465238693,
+        "OldEncoder": {
+          "Frames": 90,
+          "SourceFramesAccepted": 87,
+          "Deltas": 8434,
+          "VideoBytes": 75150,
+          "MaximumCycles": 79544.40000000001,
+          "CycleBudget": 79545.45454545456,
+          "VideoByteBudget": 4385
+        },
+        "NewEncoder": {
+          "Frames": 90,
+          "SourceFramesAccepted": 87,
+          "Deltas": 8223,
+          "VideoBytes": 82771,
+          "MaximumCycles": 79543.19999999998,
+          "CycleBudget": 79545.45454545456,
+          "VideoByteBudget": 4385
+        }
+      },
+      {
+        "Start": 80,
+        "Frames": 90,
+        "Samples": 30,
+        "OldError": 0.010581886574946093,
+        "NewError": 0.007377257936201008,
+        "OldTemporalError": 0.006785349294811095,
+        "NewTemporalError": 0.0078029808091753155,
+        "OldEncoder": {
+          "Frames": 90,
+          "SourceFramesAccepted": 89,
+          "Deltas": 3681,
+          "VideoBytes": 31205,
+          "MaximumCycles": 79542.49999999999,
+          "CycleBudget": 79545.45454545456,
+          "VideoByteBudget": 4385
+        },
+        "NewEncoder": {
+          "Frames": 90,
+          "SourceFramesAccepted": 87,
+          "Deltas": 3873,
+          "VideoBytes": 36295,
+          "MaximumCycles": 79537.09999999993,
+          "CycleBudget": 79545.45454545456,
+          "VideoByteBudget": 4385
+        }
+      },
+      {
+        "Start": 150,
+        "Frames": 90,
+        "Samples": 30,
+        "OldError": 0.01601806800758064,
+        "NewError": 0.012181964371764753,
+        "OldTemporalError": 0.0176278984501919,
+        "NewTemporalError": 0.014746751450392155,
+        "OldEncoder": {
+          "Frames": 90,
+          "SourceFramesAccepted": 54,
+          "Deltas": 19174,
+          "VideoBytes": 367321,
+          "MaximumCycles": 79540.79999999973,
+          "CycleBudget": 79545.45454545456,
+          "VideoByteBudget": 4385
+        },
+        "NewEncoder": {
+          "Frames": 90,
+          "SourceFramesAccepted": 60,
+          "Deltas": 20116,
+          "VideoBytes": 365873,
+          "MaximumCycles": 79536.99999999987,
+          "CycleBudget": 79545.45454545456,
+          "VideoByteBudget": 4385
+        }
+      }
+    ]
+  },
+  "EncodedQuality": {
+    "Frames": 6042,
+    "SampledFrames": 202,
+    "OldError": 0.004643298719971199,
+    "NewError": 0.001531336182581626,
+    "ReductionPercent": 67.02051117247257,
+    "OldDetailError": 0.013445767819964642,
+    "NewDetailError": 0.0058139504079421185,
+    "DetailReductionPercent": 56.759997005828055,
+    "Motion": [
+      {
+        "Start": 30,
+        "Frames": 90,
+        "OldError": 0.0037217913956950894,
+        "NewError": 0.00042466734524040304,
+        "OldTemporalError": 3.653156350122658e-05,
+        "NewTemporalError": 2.3979820550561497e-05
+      },
+      {
+        "Start": 80,
+        "Frames": 90,
+        "OldError": 0.00412599924574702,
+        "NewError": 0.0008706978525627573,
+        "OldTemporalError": 0.0002052650366357649,
+        "NewTemporalError": 0.0005260520988894347
+      },
+      {
+        "Start": 150,
+        "Frames": 90,
+        "OldError": 0.00665471938367826,
+        "NewError": 0.0019568072403188877,
+        "OldTemporalError": 0.004270317586698812,
+        "NewTemporalError": 0.0025152429024805334
+      }
+    ]
+  },
+  "Integration": {
+    "Success": true,
+    "FullMirProfiles": 3,
+    "FullAdjustedMir": true,
+    "AudioMatchesSource": true,
+    "InvalidSettingsRejected": true,
+    "EmptyTemp": true,
+    "Results": [
+      {
+        "name": "MIR_CGA",
+        "passed": true,
+        "seconds": 4.8603541,
+        "peak_app_mib": 64.0234375,
+        "file": "<WORKSPACE>\\tests\\ntsc06\\integration\\MIR_CGA.XDV",
+        "mode": 1,
+        "packets": 6042,
+        "fps": 30.0,
+        "duration": 201.4,
+        "bytes": 21813146,
+        "peak_kib_s": 150.0,
+        "changed_frames": 5605,
+        "audio_range": [
+          0,
+          255
+        ],
+        "video_sha256": "f8ef1472028e15df68419dae0ae903ff27625258d77c321638fb51d34e44374a",
+        "audio_sha256": "5706cc7f4cf55b36d4be475bb5ce9098d7f13a8abaa85f146e681de8c29be15d",
+        "max_cycles": 79545.40000000017,
+        "max_video_bytes": 4385
+      },
+      {
+        "name": "MIR_BW",
+        "passed": true,
+        "seconds": 5.5974956,
+        "peak_app_mib": 67.69140625,
+        "file": "<WORKSPACE>\\tests\\ntsc06\\integration\\MIR_BW.XDV",
+        "mode": 2,
+        "packets": 6042,
+        "fps": 30.0,
+        "duration": 201.4,
+        "bytes": 18599322,
+        "peak_kib_s": 150.0,
+        "changed_frames": 5566,
+        "audio_range": [
+          0,
+          255
+        ],
+        "video_sha256": "bfc3149c81725f589d5d05fb093bc01cfd96e9724ea6c5ccea6b5b2eefdba0c7",
+        "audio_sha256": "5706cc7f4cf55b36d4be475bb5ce9098d7f13a8abaa85f146e681de8c29be15d",
+        "max_cycles": 79545.40000000007,
+        "max_video_bytes": 4385
+      },
+      {
+        "name": "MIR_TND",
+        "passed": true,
+        "seconds": 3.0487411,
+        "peak_app_mib": 62.73046875,
+        "file": "<WORKSPACE>\\tests\\ntsc06\\integration\\MIR_TND.XDV",
+        "mode": 3,
+        "packets": 6042,
+        "fps": 30.0,
+        "duration": 201.4,
+        "bytes": 21190042,
+        "peak_kib_s": 150.0,
+        "changed_frames": 5600,
+        "audio_range": [
+          0,
+          255
+        ],
+        "video_sha256": "12cd989c36cfeff619548812f541d69eb456c513e8a3a17603c9b43ac921e4ac",
+        "audio_sha256": "5706cc7f4cf55b36d4be475bb5ce9098d7f13a8abaa85f146e681de8c29be15d",
+        "max_cycles": 79543.99999999997,
+        "max_video_bytes": 4385
+      },
+      {
+        "name": "MIR_ADJ",
+        "passed": true,
+        "seconds": 4.5078934,
+        "peak_app_mib": 63.40625,
+        "file": "<WORKSPACE>\\tests\\ntsc06\\integration\\MIR_ADJ.XDV",
+        "mode": 1,
+        "packets": 6042,
+        "fps": 30.0,
+        "duration": 201.4,
+        "bytes": 21354906,
+        "peak_kib_s": 150.0,
+        "changed_frames": 5605,
+        "audio_range": [
+          0,
+          255
+        ],
+        "video_sha256": "6d7c46ec70cd177a584f2fedb109e3a844918fec48883b788ffe4d2db53b5cf4",
+        "audio_sha256": "5706cc7f4cf55b36d4be475bb5ce9098d7f13a8abaa85f146e681de8c29be15d",
+        "max_cycles": 79545.2,
+        "max_video_bytes": 4385
+      },
+      {
+        "name": "HALF",
+        "passed": true,
+        "seconds": 1.9846042,
+        "peak_app_mib": 55.1953125,
+        "file": "<WORKSPACE>\\tests\\ntsc06\\integration\\HALF.XDV",
+        "mode": 1,
+        "packets": 180,
+        "fps": 30.0,
+        "duration": 6.0,
+        "bytes": 345268,
+        "peak_kib_s": 150.0,
+        "changed_frames": 161,
+        "audio_range": [
+          4,
+          255
+        ],
+        "video_sha256": "19b604a81f4f814b69313b353b491cd8f53d503ccd19c29ed1248aed4b313fb8",
+        "audio_sha256": "395f3d817e989ea4161626c6724c0b13746027866b71390b68aa4fa7801a5fa4",
+        "max_cycles": 79538.10000000002,
+        "max_video_bytes": 4385
+      },
+      {
+        "name": "BW_ADJ",
+        "passed": true,
+        "seconds": 0.3117287,
+        "peak_app_mib": 51.53515625,
+        "file": "<WORKSPACE>\\tests\\ntsc06\\integration\\BW_ADJ.XDV",
+        "mode": 2,
+        "packets": 180,
+        "fps": 30.0,
+        "duration": 6.0,
+        "bytes": 359604,
+        "peak_kib_s": 150.0,
+        "changed_frames": 161,
+        "audio_range": [
+          4,
+          255
+        ],
+        "video_sha256": "366fdd2a23ff1ea8dee62c2dbeeaa58bf8347cbfd4b5342728682b7a9948b7f0",
+        "audio_sha256": "395f3d817e989ea4161626c6724c0b13746027866b71390b68aa4fa7801a5fa4",
+        "max_cycles": 79542.40000000004,
+        "max_video_bytes": 4385
+      },
+      {
+        "name": "TND_ADJ",
+        "passed": true,
+        "seconds": 0.5805067,
+        "peak_app_mib": 53.7265625,
+        "file": "<WORKSPACE>\\tests\\ntsc06\\integration\\TND_ADJ.XDV",
+        "mode": 3,
+        "packets": 180,
+        "fps": 30.0,
+        "duration": 6.0,
+        "bytes": 404660,
+        "peak_kib_s": 150.0,
+        "changed_frames": 163,
+        "audio_range": [
+          4,
+          255
+        ],
+        "video_sha256": "2650a673ef612481a4fa683dead392c4a2035cc7bd22e89bd0aa96ae403abfe6",
+        "audio_sha256": "395f3d817e989ea4161626c6724c0b13746027866b71390b68aa4fa7801a5fa4",
+        "max_cycles": 79545.4,
+        "max_video_bytes": 4385
+      },
+      {
+        "name": "LATE",
+        "passed": true,
+        "seconds": 2.050208,
+        "peak_app_mib": 55.265625,
+        "file": "<WORKSPACE>\\tests\\ntsc06\\integration\\LATE.XDV",
+        "mode": 1,
+        "packets": 180,
+        "fps": 30.0,
+        "duration": 6.0,
+        "bytes": 413364,
+        "peak_kib_s": 150.0,
+        "changed_frames": 163,
+        "audio_range": [
+          4,
+          255
+        ],
+        "video_sha256": "1ccac8eaf021031e55120f2adcb82cbddd334bafec26ba8d081a9a3791dc1908",
+        "audio_sha256": "395f3d817e989ea4161626c6724c0b13746027866b71390b68aa4fa7801a5fa4",
+        "max_cycles": 79542.99999999983,
+        "max_video_bytes": 4385
+      },
+      {
+        "name": "LEGACY",
+        "passed": true,
+        "seconds": 3.6701962,
+        "peak_app_mib": 62.76171875,
+        "file": "<WORKSPACE>\\tests\\ntsc06\\integration\\LEGACY.XDV",
+        "mode": 1,
+        "packets": 6042,
+        "fps": 30.0,
+        "duration": 201.4,
+        "bytes": 21474202,
+        "peak_kib_s": 150.0,
+        "changed_frames": 5600,
+        "audio_range": [
+          0,
+          255
+        ],
+        "video_sha256": "4c9ee120423bba33e0eef1114c6f3382d3e262e61625302045ceabb083a90904",
+        "audio_sha256": "5706cc7f4cf55b36d4be475bb5ce9098d7f13a8abaa85f146e681de8c29be15d",
+        "max_cycles": 79544.8,
+        "max_video_bytes": 4385
+      },
+      {
+        "name": "ZERO",
+        "passed": true,
+        "seconds": 1.5463327,
+        "peak_app_mib": 55.1328125,
+        "file": "<WORKSPACE>\\tests\\ntsc06\\integration\\ZERO.XDV",
+        "mode": 1,
+        "packets": 60,
+        "fps": 30.0,
+        "duration": 2.0,
+        "bytes": 103996,
+        "peak_kib_s": 120.0,
+        "changed_frames": 47,
+        "audio_range": [
+          4,
+          255
+        ],
+        "video_sha256": "ef1dba4b4057428b09df7ee6b6867b8e668b0d15ffeff1f434f6f6309d2b4926",
+        "audio_sha256": "2a27a67e68cd3093bee64ec99b2f871f9539d1bc3d6e096a82e220aa4dfc9e4a",
+        "max_cycles": 79541.0,
+        "max_video_bytes": 3323
+      },
+      {
+        "name": "NONE",
+        "passed": true,
+        "seconds": 1.6905841,
+        "peak_app_mib": 55.28515625,
+        "file": "<WORKSPACE>\\tests\\ntsc06\\integration\\NONE.XDV",
+        "mode": 1,
+        "packets": 60,
+        "fps": 30.0,
+        "duration": 2.0,
+        "bytes": 103996,
+        "peak_kib_s": 120.0,
+        "changed_frames": 47,
+        "audio_range": [
+          4,
+          255
+        ],
+        "video_sha256": "ef1dba4b4057428b09df7ee6b6867b8e668b0d15ffeff1f434f6f6309d2b4926",
+        "audio_sha256": "2a27a67e68cd3093bee64ec99b2f871f9539d1bc3d6e096a82e220aa4dfc9e4a",
+        "max_cycles": 79541.0,
+        "max_video_bytes": 3323
+      },
+      {
+        "name": "REPEAT",
+        "passed": true,
+        "seconds": 2.0328873,
+        "peak_app_mib": 55.3671875,
+        "file": "<WORKSPACE>\\tests\\ntsc06\\integration\\REPEAT.XDV",
+        "mode": 1,
+        "packets": 180,
+        "fps": 30.0,
+        "duration": 6.0,
+        "bytes": 413364,
+        "peak_kib_s": 150.0,
+        "changed_frames": 163,
+        "audio_range": [
+          4,
+          255
+        ],
+        "video_sha256": "1ccac8eaf021031e55120f2adcb82cbddd334bafec26ba8d081a9a3791dc1908",
+        "audio_sha256": "395f3d817e989ea4161626c6724c0b13746027866b71390b68aa4fa7801a5fa4",
+        "max_cycles": 79542.99999999983,
+        "max_video_bytes": 4385
+      }
+    ]
+  },
+  "Interface": {
+    "Success": true,
+    "NtscEncodingSelection": true,
+    "NtscSwitch": true,
+    "NtscTuning": true,
+    "NtscReset": true,
+    "GammaAdjustment": true,
+    "SaturationAdjustment": true,
+    "DitherStrengthAdjustment": true,
+    "ComparisonToggle": true,
+    "ColorReset": true,
+    "SourceUnaffectedByAdjustments": true,
+    "PreviewLoaded": true,
+    "ProfileCount": 3,
+    "MediaLoaded": true,
+    "ControlsRestored": true,
+    "SourceSeek": true,
+    "AutomaticPreview": true,
+    "English": true,
+    "ResultSeek": true,
+    "Playback": true,
+    "AudioActive": true,
+    "OverwriteDeclinedPreservesFile": true,
+    "OverwriteAccepted": true,
+    "OverwriteRequests": 2,
+    "FileButtonWidthAt96Dpi": 86,
+    "ButtonsFullyVisible": true,
+    "ScaledButtonsFullyVisible": true,
+    "DeviceDpi": 96,
+    "PreviewsCompleted": 17
+  },
+  "ComparisonPath": {
+    "Success": true,
+    "Cases": [
+      {
+        "Mode": 1,
+        "HalfHeight": false,
+        "Fit": "fit",
+        "PreviewMatchesConversion": true,
+        "OriginalUnchanged": true
+      },
+      {
+        "Mode": 1,
+        "HalfHeight": true,
+        "Fit": "fit",
+        "PreviewMatchesConversion": true,
+        "OriginalUnchanged": true
+      },
+      {
+        "Mode": 2,
+        "HalfHeight": false,
+        "Fit": "crop",
+        "PreviewMatchesConversion": true,
+        "OriginalUnchanged": true
+      },
+      {
+        "Mode": 3,
+        "HalfHeight": false,
+        "Fit": "stretch",
+        "PreviewMatchesConversion": true,
+        "OriginalUnchanged": true
+      }
+    ]
+  },
+  "Players": {
+    "MIR_CGA": {
+      "Success": true,
+      "ClockAdvanced": true,
+      "AudioActive": true,
+      "LiveVolumeAndSeekPersistence": true,
+      "StopResetsToBeginning": true,
+      "PauseButton": true,
+      "VolumeSliderWidth": 124,
+      "TransportOnLeft": true,
+      "PauseHeldFrame": true,
+      "SeekAndResumeCycles": 8,
+      "ReachedEnd": true,
+      "Mode": 1,
+      "Packets": 6042,
+      "RenderedFrames": 73
+    },
+    "MIR_BW": {
+      "Success": true,
+      "ClockAdvanced": true,
+      "AudioActive": true,
+      "LiveVolumeAndSeekPersistence": true,
+      "StopResetsToBeginning": true,
+      "PauseButton": true,
+      "VolumeSliderWidth": 124,
+      "TransportOnLeft": true,
+      "PauseHeldFrame": true,
+      "SeekAndResumeCycles": 8,
+      "ReachedEnd": true,
+      "Mode": 2,
+      "Packets": 6042,
+      "RenderedFrames": 73
+    },
+    "MIR_TND": {
+      "Success": true,
+      "ClockAdvanced": true,
+      "AudioActive": true,
+      "LiveVolumeAndSeekPersistence": true,
+      "StopResetsToBeginning": true,
+      "PauseButton": true,
+      "VolumeSliderWidth": 124,
+      "TransportOnLeft": true,
+      "PauseHeldFrame": true,
+      "SeekAndResumeCycles": 8,
+      "ReachedEnd": true,
+      "Mode": 3,
+      "Packets": 6042,
+      "RenderedFrames": 69
+    },
+    "LATE": {
+      "Success": true,
+      "ClockAdvanced": true,
+      "AudioActive": true,
+      "LiveVolumeAndSeekPersistence": true,
+      "StopResetsToBeginning": true,
+      "PauseButton": true,
+      "VolumeSliderWidth": 124,
+      "TransportOnLeft": true,
+      "PauseHeldFrame": true,
+      "SeekAndResumeCycles": 8,
+      "ReachedEnd": true,
+      "Mode": 1,
+      "Packets": 180,
+      "RenderedFrames": 71
+    }
+  },
+  "LegacyByteIdenticalTo05": true,
+  "MonochromeAndTandyByteIdenticalTo05": true,
+  "NoHardwareCapture": true,
+  "LegacyColour": {
+    "Success": true,
+    "Assertions": 43,
+    "Measurements": [
+      {
+        "Mode": 1,
+        "Seconds": 30,
+        "LegacyPatchError": 0.003029199044160151,
+        "NewPatchError": 0.0003919148123214761
+      },
+      {
+        "Mode": 1,
+        "Seconds": 50,
+        "LegacyPatchError": 0.002921931905273416,
+        "NewPatchError": 0.0003599574110394276
+      },
+      {
+        "Mode": 1,
+        "Seconds": 80,
+        "LegacyPatchError": 0.002936161201218151,
+        "NewPatchError": 0.0003518317770426567
+      },
+      {
+        "Mode": 1,
+        "Seconds": 110,
+        "LegacyPatchError": 0.002715102855587744,
+        "NewPatchError": 0.00023567482800725942
+      },
+      {
+        "Mode": 1,
+        "Seconds": 150,
+        "LegacyPatchError": 0.0024604769523216053,
+        "NewPatchError": 0.00025943106884494354
+      },
+      {
+        "Mode": 1,
+        "Seconds": 180,
+        "LegacyPatchError": 0.0016205829806514053,
+        "NewPatchError": 0.00025983136481043753
+      },
+      {
+        "Mode": 3,
+        "Seconds": 30,
+        "LegacyPatchError": 0.0013762323967106758,
+        "NewPatchError": 0.0002126748563978344
+      },
+      {
+        "Mode": 3,
+        "Seconds": 50,
+        "LegacyPatchError": 0.0015560547916755394,
+        "NewPatchError": 0.0004020640972416126
+      },
+      {
+        "Mode": 3,
+        "Seconds": 80,
+        "LegacyPatchError": 0.0012272478047840503,
+        "NewPatchError": 0.0005053012053503109
+      },
+      {
+        "Mode": 3,
+        "Seconds": 110,
+        "LegacyPatchError": 0.001631891597770519,
+        "NewPatchError": 0.000285952089079317
+      },
+      {
+        "Mode": 3,
+        "Seconds": 150,
+        "LegacyPatchError": 0.0009219399869472282,
+        "NewPatchError": 0.000319098103944358
+      },
+      {
+        "Mode": 3,
+        "Seconds": 180,
+        "LegacyPatchError": 0.000659408472623274,
+        "NewPatchError": 0.00024069186605303266
+      }
+    ]
+  },
+  "PortableArchive": {
+    "Success": true,
+    "Entries": 284,
+    "Crc": true,
+    "MatchesPublishedFolder": true,
+    "Machine": "x64",
+    "IconSizes": 9,
+    "RootFiles": [
+      "XdcConverter.exe",
+      "README.txt",
+      "README.en.txt"
+    ],
+    "Bytes": 132010595,
+    "Sha256": "5ef98ab86eeb89182ff9ca1fbe1c1e25b4e664bd26cb2da1ba23efbb9ca5be3b"
+  },
+  "Relocation": {
+    "Success": true,
+    "SpacesAndCyrillic": true,
+    "RelativePaths": true,
+    "AbsentDotnetRoot": true,
+    "EmptyTemp": true,
+    "HardlinksForRuntime": true,
+    "Frames": 60
+  }
+}

@@ -1,0 +1,1071 @@
+{
+  "Success": true,
+  "Version": "0.7.0",
+  "Date": "2026-10-25",
+  "NativeCore": {
+    "Success": true,
+    "Cases": 113,
+    "EncodedFrames": 414
+  },
+  "Contracts": {
+    "Success": true,
+    "Checks": 167,
+    "BlueLowFrequencyEnergy": 15.299423149111938,
+    "WhiteLowFrequencyEnergy": 321.299397993867,
+    "Masks": [
+      {
+        "Name": "bayer",
+        "Size": 8,
+        "Ranks": [
+          0,
+          48,
+          12,
+          60,
+          3,
+          51,
+          15,
+          63,
+          32,
+          16,
+          44,
+          28,
+          35,
+          19,
+          47,
+          31,
+          8,
+          56,
+          4,
+          52,
+          11,
+          59,
+          7,
+          55,
+          40,
+          24,
+          36,
+          20,
+          43,
+          27,
+          39,
+          23,
+          2,
+          50,
+          14,
+          62,
+          1,
+          49,
+          13,
+          61,
+          34,
+          18,
+          46,
+          30,
+          33,
+          17,
+          45,
+          29,
+          10,
+          58,
+          6,
+          54,
+          9,
+          57,
+          5,
+          53,
+          42,
+          26,
+          38,
+          22,
+          41,
+          25,
+          37,
+          21
+        ]
+      },
+      {
+        "Name": "bayer4",
+        "Size": 4,
+        "Ranks": [
+          1,
+          49,
+          13,
+          61,
+          33,
+          17,
+          45,
+          29,
+          9,
+          57,
+          5,
+          53,
+          41,
+          25,
+          37,
+          21
+        ]
+      },
+      {
+        "Name": "blue",
+        "Size": 8,
+        "Ranks": [
+          39,
+          21,
+          56,
+          1,
+          61,
+          38,
+          4,
+          54,
+          49,
+          14,
+          45,
+          9,
+          23,
+          30,
+          11,
+          25,
+          8,
+          60,
+          33,
+          53,
+          40,
+          51,
+          46,
+          36,
+          3,
+          29,
+          18,
+          5,
+          28,
+          15,
+          20,
+          59,
+          24,
+          50,
+          37,
+          44,
+          62,
+          0,
+          55,
+          41,
+          12,
+          16,
+          57,
+          10,
+          22,
+          32,
+          7,
+          34,
+          63,
+          48,
+          6,
+          35,
+          52,
+          47,
+          27,
+          43,
+          2,
+          31,
+          26,
+          42,
+          17,
+          13,
+          58,
+          19
+        ]
+      }
+    ],
+    "Stabilization": {
+      "Frames": 57,
+      "ProposedByteChanges": 148570,
+      "HeldByteChanges": 11865,
+      "SceneCuts": 3
+    }
+  },
+  "Integration": {
+    "Success": true,
+    "FullMirProfiles": 3,
+    "FullMirDitherVariants": 6,
+    "AudioMatchesSource": true,
+    "InvalidSettingsRejected": true,
+    "EmptyTemp": true,
+    "DisabledMatches06": true,
+    "LegacyMatches05": true,
+    "MonoTandyUnchanged": true,
+    "Results": [
+      {
+        "name": "MIR_CGA",
+        "passed": true,
+        "seconds": 93.0202055,
+        "peak_app_mib": 66.69921875,
+        "file": "<WORKSPACE>\\tests\\ntsc07\\final-integration\\MIR_CGA.XDV",
+        "mode": 1,
+        "packets": 6042,
+        "fps": 30.0,
+        "duration": 201.4,
+        "bytes": 21180826,
+        "peak_kib_s": 150.0,
+        "changed_frames": 5661,
+        "audio_range": [
+          0,
+          255
+        ],
+        "video_sha256": "528959ab251b57aaeb3cf0f8f0e6d6c6162be6cb61011e451ecfe6ccdd7045d2",
+        "audio_sha256": "5706cc7f4cf55b36d4be475bb5ce9098d7f13a8abaa85f146e681de8c29be15d",
+        "max_cycles": 79544.69999999992,
+        "max_video_bytes": 4385
+      },
+      {
+        "name": "MIR_BW",
+        "passed": true,
+        "seconds": 6.7223708,
+        "peak_app_mib": 63.7578125,
+        "file": "<WORKSPACE>\\tests\\ntsc07\\final-integration\\MIR_BW.XDV",
+        "mode": 2,
+        "packets": 6042,
+        "fps": 30.0,
+        "duration": 201.4,
+        "bytes": 18599322,
+        "peak_kib_s": 150.0,
+        "changed_frames": 5566,
+        "audio_range": [
+          0,
+          255
+        ],
+        "video_sha256": "bfc3149c81725f589d5d05fb093bc01cfd96e9724ea6c5ccea6b5b2eefdba0c7",
+        "audio_sha256": "5706cc7f4cf55b36d4be475bb5ce9098d7f13a8abaa85f146e681de8c29be15d",
+        "max_cycles": 79545.40000000007,
+        "max_video_bytes": 4385
+      },
+      {
+        "name": "MIR_TND",
+        "passed": true,
+        "seconds": 3.3372497,
+        "peak_app_mib": 63.33984375,
+        "file": "<WORKSPACE>\\tests\\ntsc07\\final-integration\\MIR_TND.XDV",
+        "mode": 3,
+        "packets": 6042,
+        "fps": 30.0,
+        "duration": 201.4,
+        "bytes": 21190042,
+        "peak_kib_s": 150.0,
+        "changed_frames": 5600,
+        "audio_range": [
+          0,
+          255
+        ],
+        "video_sha256": "12cd989c36cfeff619548812f541d69eb456c513e8a3a17603c9b43ac921e4ac",
+        "audio_sha256": "5706cc7f4cf55b36d4be475bb5ce9098d7f13a8abaa85f146e681de8c29be15d",
+        "max_cycles": 79543.99999999997,
+        "max_video_bytes": 4385
+      },
+      {
+        "name": "B4_STAB",
+        "passed": true,
+        "seconds": 84.8852428,
+        "peak_app_mib": 71.6953125,
+        "file": "<WORKSPACE>\\tests\\ntsc07\\final-integration\\B4_STAB.XDV",
+        "mode": 1,
+        "packets": 6042,
+        "fps": 30.0,
+        "duration": 201.4,
+        "bytes": 21174170,
+        "peak_kib_s": 150.0,
+        "changed_frames": 5656,
+        "audio_range": [
+          0,
+          255
+        ],
+        "video_sha256": "98605c40b1a04301ed64caf72f13d9329aa4cfa39ad5303ed087b51d99ba5f24",
+        "audio_sha256": "5706cc7f4cf55b36d4be475bb5ce9098d7f13a8abaa85f146e681de8c29be15d",
+        "max_cycles": 79543.50000000001,
+        "max_video_bytes": 4385
+      },
+      {
+        "name": "BLUE_STB",
+        "passed": true,
+        "seconds": 86.3744069,
+        "peak_app_mib": 98.5,
+        "file": "<WORKSPACE>\\tests\\ntsc07\\final-integration\\BLUE_STB.XDV",
+        "mode": 1,
+        "packets": 6042,
+        "fps": 30.0,
+        "duration": 201.4,
+        "bytes": 21172122,
+        "peak_kib_s": 150.0,
+        "changed_frames": 5647,
+        "audio_range": [
+          0,
+          255
+        ],
+        "video_sha256": "fd381d17e0f3beef4b7f29cdea8673bd943844f4a3dc0afaac4f18664a8fd86c",
+        "audio_sha256": "5706cc7f4cf55b36d4be475bb5ce9098d7f13a8abaa85f146e681de8c29be15d",
+        "max_cycles": 79544.50000000001,
+        "max_video_bytes": 4385
+      },
+      {
+        "name": "B8_OFF",
+        "passed": true,
+        "seconds": 4.8725827,
+        "peak_app_mib": 64.35546875,
+        "file": "<WORKSPACE>\\tests\\ntsc07\\final-integration\\B8_OFF.XDV",
+        "mode": 1,
+        "packets": 6042,
+        "fps": 30.0,
+        "duration": 201.4,
+        "bytes": 21813146,
+        "peak_kib_s": 150.0,
+        "changed_frames": 5605,
+        "audio_range": [
+          0,
+          255
+        ],
+        "video_sha256": "f8ef1472028e15df68419dae0ae903ff27625258d77c321638fb51d34e44374a",
+        "audio_sha256": "5706cc7f4cf55b36d4be475bb5ce9098d7f13a8abaa85f146e681de8c29be15d",
+        "max_cycles": 79545.40000000017,
+        "max_video_bytes": 4385
+      },
+      {
+        "name": "B4_OFF",
+        "passed": true,
+        "seconds": 3.6279816,
+        "peak_app_mib": 63.3828125,
+        "file": "<WORKSPACE>\\tests\\ntsc07\\final-integration\\B4_OFF.XDV",
+        "mode": 1,
+        "packets": 6042,
+        "fps": 30.0,
+        "duration": 201.4,
+        "bytes": 21769114,
+        "peak_kib_s": 150.0,
+        "changed_frames": 5606,
+        "audio_range": [
+          0,
+          255
+        ],
+        "video_sha256": "4d1d624359bb0d7be82d56d9b2f65cd300d4b234e86bdf3a2f0c9ebc70f54486",
+        "audio_sha256": "5706cc7f4cf55b36d4be475bb5ce9098d7f13a8abaa85f146e681de8c29be15d",
+        "max_cycles": 79545.09999999998,
+        "max_video_bytes": 4385
+      },
+      {
+        "name": "BLUE_OFF",
+        "passed": true,
+        "seconds": 4.8090632,
+        "peak_app_mib": 64.3046875,
+        "file": "<WORKSPACE>\\tests\\ntsc07\\final-integration\\BLUE_OFF.XDV",
+        "mode": 1,
+        "packets": 6042,
+        "fps": 30.0,
+        "duration": 201.4,
+        "bytes": 21783962,
+        "peak_kib_s": 150.0,
+        "changed_frames": 5606,
+        "audio_range": [
+          0,
+          255
+        ],
+        "video_sha256": "a736f208f690b037f8b02205368732a6017a63c027ff0c3541b1ecc5d1276262",
+        "audio_sha256": "5706cc7f4cf55b36d4be475bb5ce9098d7f13a8abaa85f146e681de8c29be15d",
+        "max_cycles": 79545.3,
+        "max_video_bytes": 4385
+      },
+      {
+        "name": "MIR_ADJ",
+        "passed": true,
+        "seconds": 4.2130034,
+        "peak_app_mib": 66.40625,
+        "file": "<WORKSPACE>\\tests\\ntsc07\\final-integration\\MIR_ADJ.XDV",
+        "mode": 1,
+        "packets": 180,
+        "fps": 30.0,
+        "duration": 6.0,
+        "bytes": 394420,
+        "peak_kib_s": 150.0,
+        "changed_frames": 169,
+        "audio_range": [
+          4,
+          255
+        ],
+        "video_sha256": "574db07c36935262ce172f2f602f0e5fc2288f27edd2f861390961d3da15ad86",
+        "audio_sha256": "395f3d817e989ea4161626c6724c0b13746027866b71390b68aa4fa7801a5fa4",
+        "max_cycles": 79520.0,
+        "max_video_bytes": 4385
+      },
+      {
+        "name": "HALF",
+        "passed": true,
+        "seconds": 2.5593101,
+        "peak_app_mib": 69.69921875,
+        "file": "<WORKSPACE>\\tests\\ntsc07\\final-integration\\HALF.XDV",
+        "mode": 1,
+        "packets": 180,
+        "fps": 30.0,
+        "duration": 6.0,
+        "bytes": 342708,
+        "peak_kib_s": 150.0,
+        "changed_frames": 163,
+        "audio_range": [
+          4,
+          255
+        ],
+        "video_sha256": "23b073c6ab6fc5c228e725a40b2201185250924f23af990a531d505c319dc803",
+        "audio_sha256": "395f3d817e989ea4161626c6724c0b13746027866b71390b68aa4fa7801a5fa4",
+        "max_cycles": 79523.39999999989,
+        "max_video_bytes": 4382
+      },
+      {
+        "name": "BW_ADJ",
+        "passed": true,
+        "seconds": 0.3150054,
+        "peak_app_mib": 49.74609375,
+        "file": "<WORKSPACE>\\tests\\ntsc07\\final-integration\\BW_ADJ.XDV",
+        "mode": 2,
+        "packets": 180,
+        "fps": 30.0,
+        "duration": 6.0,
+        "bytes": 365236,
+        "peak_kib_s": 150.0,
+        "changed_frames": 161,
+        "audio_range": [
+          4,
+          255
+        ],
+        "video_sha256": "525f5559865fca143734f97ed915d3ce94e6383e8f6a63996eaf95114fa2d505",
+        "audio_sha256": "395f3d817e989ea4161626c6724c0b13746027866b71390b68aa4fa7801a5fa4",
+        "max_cycles": 79544.8999999999,
+        "max_video_bytes": 4385
+      },
+      {
+        "name": "TND_ADJ",
+        "passed": true,
+        "seconds": 0.4932719,
+        "peak_app_mib": 53.94921875,
+        "file": "<WORKSPACE>\\tests\\ntsc07\\final-integration\\TND_ADJ.XDV",
+        "mode": 3,
+        "packets": 180,
+        "fps": 30.0,
+        "duration": 6.0,
+        "bytes": 404660,
+        "peak_kib_s": 150.0,
+        "changed_frames": 163,
+        "audio_range": [
+          4,
+          255
+        ],
+        "video_sha256": "160673399833d130317f8f797b64ed215115235472083a14461d58058f9b8b41",
+        "audio_sha256": "395f3d817e989ea4161626c6724c0b13746027866b71390b68aa4fa7801a5fa4",
+        "max_cycles": 79545.20000000023,
+        "max_video_bytes": 4385
+      },
+      {
+        "name": "LATE",
+        "passed": true,
+        "seconds": 4.3313231,
+        "peak_app_mib": 66.58984375,
+        "file": "<WORKSPACE>\\tests\\ntsc07\\final-integration\\LATE.XDV",
+        "mode": 1,
+        "packets": 180,
+        "fps": 30.0,
+        "duration": 6.0,
+        "bytes": 399540,
+        "peak_kib_s": 150.0,
+        "changed_frames": 171,
+        "audio_range": [
+          4,
+          255
+        ],
+        "video_sha256": "9c9130c2b473919a591ffb34e66e483682ce7650a17202a389588687c0a7a39e",
+        "audio_sha256": "395f3d817e989ea4161626c6724c0b13746027866b71390b68aa4fa7801a5fa4",
+        "max_cycles": 79542.99999999999,
+        "max_video_bytes": 4385
+      },
+      {
+        "name": "LEGACY",
+        "passed": true,
+        "seconds": 3.5629525,
+        "peak_app_mib": 63.51171875,
+        "file": "<WORKSPACE>\\tests\\ntsc07\\final-integration\\LEGACY.XDV",
+        "mode": 1,
+        "packets": 6042,
+        "fps": 30.0,
+        "duration": 201.4,
+        "bytes": 21474202,
+        "peak_kib_s": 150.0,
+        "changed_frames": 5600,
+        "audio_range": [
+          0,
+          255
+        ],
+        "video_sha256": "4c9ee120423bba33e0eef1114c6f3382d3e262e61625302045ceabb083a90904",
+        "audio_sha256": "5706cc7f4cf55b36d4be475bb5ce9098d7f13a8abaa85f146e681de8c29be15d",
+        "max_cycles": 79544.8,
+        "max_video_bytes": 4385
+      },
+      {
+        "name": "ZERO",
+        "passed": true,
+        "seconds": 2.3589827,
+        "peak_app_mib": 70.38671875,
+        "file": "<WORKSPACE>\\tests\\ntsc07\\final-integration\\ZERO.XDV",
+        "mode": 1,
+        "packets": 60,
+        "fps": 30.0,
+        "duration": 2.0,
+        "bytes": 101948,
+        "peak_kib_s": 150.0,
+        "changed_frames": 50,
+        "audio_range": [
+          4,
+          255
+        ],
+        "video_sha256": "ba1dabf7b8204532e9293dd35c5b7a057ca7bc3d0e76feac7448b7eb1e767fb1",
+        "audio_sha256": "2a27a67e68cd3093bee64ec99b2f871f9539d1bc3d6e096a82e220aa4dfc9e4a",
+        "max_cycles": 79545.00000000029,
+        "max_video_bytes": 4383
+      },
+      {
+        "name": "NONE",
+        "passed": true,
+        "seconds": 2.3726799,
+        "peak_app_mib": 70.44140625,
+        "file": "<WORKSPACE>\\tests\\ntsc07\\final-integration\\NONE.XDV",
+        "mode": 1,
+        "packets": 60,
+        "fps": 30.0,
+        "duration": 2.0,
+        "bytes": 101948,
+        "peak_kib_s": 150.0,
+        "changed_frames": 50,
+        "audio_range": [
+          4,
+          255
+        ],
+        "video_sha256": "ba1dabf7b8204532e9293dd35c5b7a057ca7bc3d0e76feac7448b7eb1e767fb1",
+        "audio_sha256": "2a27a67e68cd3093bee64ec99b2f871f9539d1bc3d6e096a82e220aa4dfc9e4a",
+        "max_cycles": 79545.00000000029,
+        "max_video_bytes": 4383
+      },
+      {
+        "name": "REPEAT",
+        "passed": true,
+        "seconds": 4.3198217,
+        "peak_app_mib": 67.95703125,
+        "file": "<WORKSPACE>\\tests\\ntsc07\\final-integration\\REPEAT.XDV",
+        "mode": 1,
+        "packets": 180,
+        "fps": 30.0,
+        "duration": 6.0,
+        "bytes": 399540,
+        "peak_kib_s": 150.0,
+        "changed_frames": 171,
+        "audio_range": [
+          4,
+          255
+        ],
+        "video_sha256": "9c9130c2b473919a591ffb34e66e483682ce7650a17202a389588687c0a7a39e",
+        "audio_sha256": "395f3d817e989ea4161626c6724c0b13746027866b71390b68aa4fa7801a5fa4",
+        "max_cycles": 79542.99999999999,
+        "max_video_bytes": 4385
+      }
+    ]
+  },
+  "Safety": {
+    "Success": true,
+    "CancelPreservesExistingOutput": true,
+    "NoPartialFiles": true,
+    "SplitParts": 3,
+    "EachPartFrames": 30,
+    "SegmentStateMatchesStandalone": true,
+    "EmptyTemp": true
+  },
+  "UI": {
+    "Success": true,
+    "Bayer4": true,
+    "BlueNoise": true,
+    "StabilityControl": true,
+    "NtscEncodingSelection": true,
+    "NtscSwitch": true,
+    "NtscTuning": true,
+    "NtscReset": true,
+    "GammaAdjustment": true,
+    "SaturationAdjustment": true,
+    "DitherStrengthAdjustment": true,
+    "ComparisonToggle": true,
+    "ColorReset": true,
+    "SourceUnaffectedByAdjustments": true,
+    "PreviewLoaded": true,
+    "ProfileCount": 3,
+    "MediaLoaded": true,
+    "ControlsRestored": true,
+    "SourceSeek": true,
+    "AutomaticPreview": true,
+    "English": true,
+    "ResultSeek": true,
+    "Playback": true,
+    "AudioActive": true,
+    "OverwriteDeclinedPreservesFile": true,
+    "OverwriteAccepted": true,
+    "OverwriteRequests": 2,
+    "FileButtonWidthAt96Dpi": 86,
+    "ButtonsFullyVisible": true,
+    "ScaledButtonsFullyVisible": true,
+    "DeviceDpi": 96,
+    "PreviewsCompleted": 22
+  },
+  "Preview": {
+    "Success": true,
+    "Cases": [
+      {
+        "Mode": 1,
+        "HalfHeight": false,
+        "Fit": "fit",
+        "PreviewMatchesConversion": true,
+        "OriginalUnchanged": true
+      },
+      {
+        "Mode": 1,
+        "HalfHeight": true,
+        "Fit": "fit",
+        "PreviewMatchesConversion": true,
+        "OriginalUnchanged": true
+      },
+      {
+        "Mode": 2,
+        "HalfHeight": false,
+        "Fit": "crop",
+        "PreviewMatchesConversion": true,
+        "OriginalUnchanged": true
+      },
+      {
+        "Mode": 3,
+        "HalfHeight": false,
+        "Fit": "stretch",
+        "PreviewMatchesConversion": true,
+        "OriginalUnchanged": true
+      }
+    ]
+  },
+  "Players": {
+    "MIR_CGA": {
+      "Success": true,
+      "ClockAdvanced": true,
+      "AudioActive": true,
+      "LiveVolumeAndSeekPersistence": true,
+      "StopResetsToBeginning": true,
+      "PauseButton": true,
+      "VolumeSliderWidth": 124,
+      "TransportOnLeft": true,
+      "PauseHeldFrame": true,
+      "SeekAndResumeCycles": 8,
+      "ReachedEnd": true,
+      "Mode": 1,
+      "Packets": 6042,
+      "RenderedFrames": 74
+    },
+    "MIR_BW": {
+      "Success": true,
+      "ClockAdvanced": true,
+      "AudioActive": true,
+      "LiveVolumeAndSeekPersistence": true,
+      "StopResetsToBeginning": true,
+      "PauseButton": true,
+      "VolumeSliderWidth": 124,
+      "TransportOnLeft": true,
+      "PauseHeldFrame": true,
+      "SeekAndResumeCycles": 8,
+      "ReachedEnd": true,
+      "Mode": 2,
+      "Packets": 6042,
+      "RenderedFrames": 70
+    },
+    "MIR_TND": {
+      "Success": true,
+      "ClockAdvanced": true,
+      "AudioActive": true,
+      "LiveVolumeAndSeekPersistence": true,
+      "StopResetsToBeginning": true,
+      "PauseButton": true,
+      "VolumeSliderWidth": 124,
+      "TransportOnLeft": true,
+      "PauseHeldFrame": true,
+      "SeekAndResumeCycles": 8,
+      "ReachedEnd": true,
+      "Mode": 3,
+      "Packets": 6042,
+      "RenderedFrames": 75
+    },
+    "BLUE_STB": {
+      "Success": true,
+      "ClockAdvanced": true,
+      "AudioActive": true,
+      "LiveVolumeAndSeekPersistence": true,
+      "StopResetsToBeginning": true,
+      "PauseButton": true,
+      "VolumeSliderWidth": 124,
+      "TransportOnLeft": true,
+      "PauseHeldFrame": true,
+      "SeekAndResumeCycles": 8,
+      "ReachedEnd": true,
+      "Mode": 1,
+      "Packets": 6042,
+      "RenderedFrames": 74
+    }
+  },
+  "Comparison": {
+    "Success": true,
+    "Frames": 6042,
+    "SampledFrames": 202,
+    "MotionFrames": 270,
+    "Model": "early CGA, hue 0, chroma 1",
+    "Results": [
+      {
+        "Name": "LEGACY05",
+        "ColorError": 0.004643298719971199,
+        "DetailError": 0.013445767819964642,
+        "FileBytes": 21474202,
+        "Motion": [
+          {
+            "Start": 30,
+            "Frames": 90,
+            "ColorError": 0.0037217913956950894,
+            "TemporalError": 3.653156350122648e-05
+          },
+          {
+            "Start": 80,
+            "Frames": 90,
+            "ColorError": 0.00412599924574702,
+            "TemporalError": 0.00020526503663576538
+          },
+          {
+            "Start": 150,
+            "Frames": 90,
+            "ColorError": 0.00665471938367826,
+            "TemporalError": 0.004270317586698814
+          }
+        ]
+      },
+      {
+        "Name": "B8_OFF",
+        "ColorError": 0.001531336182581626,
+        "DetailError": 0.0058139504079421185,
+        "FileBytes": 21813146,
+        "Motion": [
+          {
+            "Start": 30,
+            "Frames": 90,
+            "ColorError": 0.00042466734524040304,
+            "TemporalError": 2.397982055056157e-05
+          },
+          {
+            "Start": 80,
+            "Frames": 90,
+            "ColorError": 0.0008706978525627573,
+            "TemporalError": 0.0005260520988894354
+          },
+          {
+            "Start": 150,
+            "Frames": 90,
+            "ColorError": 0.0019568072403188877,
+            "TemporalError": 0.0025152429024805074
+          }
+        ]
+      },
+      {
+        "Name": "MIR_CGA",
+        "ColorError": 0.0010779809892969485,
+        "DetailError": 0.004956304087178418,
+        "FileBytes": 21180826,
+        "Motion": [
+          {
+            "Start": 30,
+            "Frames": 90,
+            "ColorError": 0.0004029939351215645,
+            "TemporalError": 2.35477039541227e-05
+          },
+          {
+            "Start": 80,
+            "Frames": 90,
+            "ColorError": 0.0006453778248550631,
+            "TemporalError": 7.292892759074539e-05
+          },
+          {
+            "Start": 150,
+            "Frames": 90,
+            "ColorError": 0.0013175650085875052,
+            "TemporalError": 0.0016772602931210887
+          }
+        ]
+      },
+      {
+        "Name": "B4_OFF",
+        "ColorError": 0.0014836251728491394,
+        "DetailError": 0.0058005632682355,
+        "FileBytes": 21769114,
+        "Motion": [
+          {
+            "Start": 30,
+            "Frames": 90,
+            "ColorError": 0.0004407646126780067,
+            "TemporalError": 2.347846941450334e-05
+          },
+          {
+            "Start": 80,
+            "Frames": 90,
+            "ColorError": 0.0009517444144676923,
+            "TemporalError": 0.0005306650756150134
+          },
+          {
+            "Start": 150,
+            "Frames": 90,
+            "ColorError": 0.001982628374416128,
+            "TemporalError": 0.0025554925583113936
+          }
+        ]
+      },
+      {
+        "Name": "B4_STAB",
+        "ColorError": 0.0010834794618687872,
+        "DetailError": 0.00495713246398072,
+        "FileBytes": 21174170,
+        "Motion": [
+          {
+            "Start": 30,
+            "Frames": 90,
+            "ColorError": 0.00041892470947510414,
+            "TemporalError": 2.2801628190660037e-05
+          },
+          {
+            "Start": 80,
+            "Frames": 90,
+            "ColorError": 0.0007207895820626943,
+            "TemporalError": 6.093297598888245e-05
+          },
+          {
+            "Start": 150,
+            "Frames": 90,
+            "ColorError": 0.001313186570296983,
+            "TemporalError": 0.0016825361144538816
+          }
+        ]
+      },
+      {
+        "Name": "BLUE_OFF",
+        "ColorError": 0.001483412988601684,
+        "DetailError": 0.006434994065674531,
+        "FileBytes": 21783962,
+        "Motion": [
+          {
+            "Start": 30,
+            "Frames": 90,
+            "ColorError": 0.0004122266291801452,
+            "TemporalError": 2.5015750247030723e-05
+          },
+          {
+            "Start": 80,
+            "Frames": 90,
+            "ColorError": 0.0009315171424595596,
+            "TemporalError": 0.0008729765567702663
+          },
+          {
+            "Start": 150,
+            "Frames": 90,
+            "ColorError": 0.0019315145112801175,
+            "TemporalError": 0.002525927116221542
+          }
+        ]
+      },
+      {
+        "Name": "BLUE_STB",
+        "ColorError": 0.0010838098891921704,
+        "DetailError": 0.00561229599977197,
+        "FileBytes": 21172122,
+        "Motion": [
+          {
+            "Start": 30,
+            "Frames": 90,
+            "ColorError": 0.00038060824180549793,
+            "TemporalError": 2.486773106149917e-05
+          },
+          {
+            "Start": 80,
+            "Frames": 90,
+            "ColorError": 0.000551261493395136,
+            "TemporalError": 9.574353877338927e-05
+          },
+          {
+            "Start": 150,
+            "Frames": 90,
+            "ColorError": 0.0014082882225197463,
+            "TemporalError": 0.001833803538986656
+          }
+        ]
+      }
+    ]
+  },
+  "RelativeTo06": [
+    {
+      "Name": "LEGACY05",
+      "ColorReductionPercent": -203.21876886257755,
+      "DetailReductionPercent": -131.26732903667556,
+      "FileReductionPercent": 1.5538519753179991,
+      "TemporalReductionPercent": [
+        {
+          "Start": 30,
+          "Percent": -52.34293944860637
+        },
+        {
+          "Start": 80,
+          "Percent": 60.980093593561044
+        },
+        {
+          "Start": 150,
+          "Percent": -69.77754245872114
+        }
+      ],
+      "MeanTemporalReductionPercent": -47.20096725320062
+    },
+    {
+      "Name": "B8_OFF",
+      "ColorReductionPercent": 0.0,
+      "DetailReductionPercent": 0.0,
+      "FileReductionPercent": 0.0,
+      "TemporalReductionPercent": [
+        {
+          "Start": 30,
+          "Percent": 0.0
+        },
+        {
+          "Start": 80,
+          "Percent": 0.0
+        },
+        {
+          "Start": 150,
+          "Percent": 0.0
+        }
+      ],
+      "MeanTemporalReductionPercent": 0.0
+    },
+    {
+      "Name": "MIR_CGA",
+      "ColorReductionPercent": 29.60520351059568,
+      "DetailReductionPercent": 14.751524532994242,
+      "FileReductionPercent": 2.8988024010841884,
+      "TemporalReductionPercent": [
+        {
+          "Start": 30,
+          "Percent": 1.802000959630834
+        },
+        {
+          "Start": 80,
+          "Percent": 86.13655800543181
+        },
+        {
+          "Start": 150,
+          "Percent": 33.31617032029028
+        }
+      ],
+      "MeanTemporalReductionPercent": 42.13448947606443
+    },
+    {
+      "Name": "B4_OFF",
+      "ColorReductionPercent": 3.1156456874187,
+      "DetailReductionPercent": 0.23025892495284195,
+      "FileReductionPercent": 0.20185992428602972,
+      "TemporalReductionPercent": [
+        {
+          "Start": 30,
+          "Percent": 2.0907209668276305
+        },
+        {
+          "Start": 80,
+          "Percent": -0.8769049178430466
+        },
+        {
+          "Start": 150,
+          "Percent": -1.6002293770988274
+        }
+      ],
+      "MeanTemporalReductionPercent": -1.4472203635108816
+    },
+    {
+      "Name": "B4_STAB",
+      "ColorReductionPercent": 29.246139796541136,
+      "DetailReductionPercent": 14.737276444445534,
+      "FileReductionPercent": 2.929316110569291,
+      "TemporalReductionPercent": [
+        {
+          "Start": 30,
+          "Percent": 4.913265958005441
+        },
+        {
+          "Start": 80,
+          "Percent": 88.41693130442405
+        },
+        {
+          "Start": 150,
+          "Percent": 33.10641637057871
+        }
+      ],
+      "MeanTemporalReductionPercent": 42.37806326524445
+    },
+    {
+      "Name": "BLUE_OFF",
+      "ColorReductionPercent": 3.1295018380059436,
+      "DetailReductionPercent": -10.6819565726608,
+      "FileReductionPercent": 0.13379088005004425,
+      "TemporalReductionPercent": [
+        {
+          "Start": 30,
+          "Percent": -4.320006041266611
+        },
+        {
+          "Start": 80,
+          "Percent": -65.94868808873373
+        },
+        {
+          "Start": 150,
+          "Percent": -0.42477860609397844
+        }
+      ],
+      "MeanTemporalReductionPercent": -11.700242952233264
+    },
+    {
+      "Name": "BLUE_STB",
+      "ColorReductionPercent": 29.22456208374745,
+      "DetailReductionPercent": 3.4684576582331927,
+      "FileReductionPercent": 2.938704944257009,
+      "TemporalReductionPercent": [
+        {
+          "Start": 30,
+          "Percent": -3.702740431545082
+        },
+        {
+          "Start": 80,
+          "Percent": 81.79960901676537
+        },
+        {
+          "Start": 150,
+          "Percent": 27.09238788913082
+        }
+      ],
+      "MeanTemporalReductionPercent": 36.240144118724295
+    }
+  ],
+  "HardwareCaptureCompared": false,
+  "Portable": {
+    "Success": true,
+    "Archive": "XdcStudio-0.7.0-win-x64-portable.zip",
+    "ArchiveBytes": 132020892,
+    "SHA256": "39acc2c02f32e326c298d4db8a22ec835666e29f3d05002b9bfb42dfb16011f6",
+    "FileCount": 284,
+    "ArchiveCRCAndContentsMatch": true,
+    "NativeHostX64": true,
+    "IconSizes": 9,
+    "RelativePaths": true,
+    "CyrillicAndSpaces": true,
+    "NoSystemDotnet": true,
+    "EmptyTemp": true,
+    "RelocatedFrames": 30
+  }
+}

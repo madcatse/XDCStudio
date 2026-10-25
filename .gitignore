@@ -1,0 +1,36 @@
+# Local toolchains, downloadable packages, builds and private samples
+/.tools/
+/downloads/
+/dist/
+/local/
+/upstream/
+**/bin/
+**/obj/
+**/__pycache__/
+*.pyc
+.vs/
+*.user
+*.suo
+.DS_Store
+Thumbs.db
+
+# Generated media and diagnostics; reference measurements live in docs/validation
+/tests/output/
+/tests/results/
+/tests/input/
+/tests/**/*.json
+/tests/**/*.png
+/tests/**/*.ppm
+/tests/**/*.log
+*.partial
+*.rollback
+*.webm
+*.mkv
+*.mp4
+*.xdv
+*.XDV
+*.wav
+*.bmp
+*.result.json
+*.report.json
+*.log.txt

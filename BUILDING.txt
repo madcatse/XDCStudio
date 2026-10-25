@@ -1,0 +1,61 @@
+Build XDC Studio 0.7.2
+=====================
+
+Requirements: Windows 10/11 x64, PowerShell 7 (pwsh), Git.
+Python 3 is needed only for the independent integration tests.
+Run commands from the repository root, not from src/.
+
+1. ./fetch-dependencies.ps1
+   Downloads pinned .NET SDK 10.0.402 and FFmpeg 9.0.2 into .tools/;
+   verifies SHA-512/SHA-256 before extraction. No system installation.
+   Original DOS player already lives in compiled/ in this fork.
+   Optional -IncludeTestTools downloads DOSBox-X for historical playback tests;
+   normal builds and conversions do not use it.
+2. ./build.ps1 -Package
+   Restores/publishes src/XdcConverter.csproj, self-contained win-x64,
+   runtime 10.0.13. Produces dist/XdcStudio-<version>-win-x64-portable.zip.
+   -NoRestore can be used after a successful restore with unchanged dependencies.
+3. ./tests/run.ps1
+   Synthetic core/transaction/stabilization tests, then a generated short
+   video through all three profiles and independent XDV/audio/seek validation.
+   No MIR download is needed. Results: tests/output/<timestamp>/.
+   Add -SkipIntegration to run only the C# contract suites.
+4. ./package-source.ps1
+   Produces dist/XdcStudio-<version>-source.zip using explicit source roots.
+   Includes original Pascal sources, documentation, artwork, test code and CI.
+   Excludes .git, binaries produced by .NET, SDKs, caches and user videos.
+
+Version comes from src/XdcConverter.csproj for packaging; keep Converter.Version
+and the help/README display versions in sync when changing a release number.
+The native root EXE points at app/XdcConverter.dll. DLLs remain inside app/;
+no single-file runtime extraction to TEMP. All of app/ and docs/ are required.
+
+Architecture
+Converter.cs: FFmpeg RGB/PCM pipes, sequential processing and output transaction.
+FrameWriter.cs: stateless quantization and source-frame preview.
+NtscQuantizer.cs / CgaNtsc.cs: measured pattern selection and signal preview.
+NtscStabilizer.cs: optional bounded temporal history from actual VRAM.
+NativeEncoder.cs: delta search/optimization and compiled 8088 update commands.
+NativeVideoDecoder.cs: bounded interpreter used by validation and playback.
+XdvMuxer.cs / XdvReader.cs: XDV serialization, checkpoints and random seeking.
+MainForm.cs: UI; offline help in docs/help.ru.html / help.en.html, opened by F1.
+
+Upstream base: 56a5dc1951e1f0b8747fe8fa4614c607e2f91c8b, Jim Leonard, MIT.
+Original root Pascal files, compiled/ and palette/ are preserved unchanged.
+The Windows encoder fixes array bounds, short delta splitting, AL-cache cost
+estimation, contiguous-delta merging and includes frame overhead in the budget.
+Unfinished updates remain subject to the original frame-integrity policy.
+
+Optional MIR tests
+Place your own MIR.webm in local/media/. Media is not part of the source ZIP.
+Full current conversion test:
+  python tests/temporal-integration.py tests/output/mir-full
+It compares all modes/masks, validates budgets and audio, and uses historical
+baselines only when local/reference/ contains them. See tests/README.md.
+GUI check (fresh output filename required):
+  dist/XdcStudio-0.7.2-win-x64/XdcConverter.exe --ui-test local/media/MIR.webm tests/output/UITEST.XDV
+The GUI test runs short conversions and checks RU/EN, help paths, automatic
+previews, playback, overwrite behaviour and button bounds at 100% and 150%.
+
+Reference metrics without user paths: docs/validation/.
+GitHub preparation: docs/PUBLISHING.md. CI publishes artifacts, not releases.

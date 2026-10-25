@@ -1,0 +1,191 @@
+{
+  "Success": true,
+  "Frames": 6042,
+  "SampledFrames": 202,
+  "MotionFrames": 270,
+  "Model": "early CGA, hue 0, chroma 1",
+  "Results": [
+    {
+      "Name": "LEGACY05",
+      "ColorError": 0.004643298719971199,
+      "DetailError": 0.013445767819964642,
+      "FileBytes": 21474202,
+      "Motion": [
+        {
+          "Start": 30,
+          "Frames": 90,
+          "ColorError": 0.0037217913956950894,
+          "TemporalError": 3.653156350122648E-05
+        },
+        {
+          "Start": 80,
+          "Frames": 90,
+          "ColorError": 0.00412599924574702,
+          "TemporalError": 0.00020526503663576538
+        },
+        {
+          "Start": 150,
+          "Frames": 90,
+          "ColorError": 0.00665471938367826,
+          "TemporalError": 0.004270317586698814
+        }
+      ]
+    },
+    {
+      "Name": "B8_OFF",
+      "ColorError": 0.001531336182581626,
+      "DetailError": 0.0058139504079421185,
+      "FileBytes": 21813146,
+      "Motion": [
+        {
+          "Start": 30,
+          "Frames": 90,
+          "ColorError": 0.00042466734524040304,
+          "TemporalError": 2.397982055056157E-05
+        },
+        {
+          "Start": 80,
+          "Frames": 90,
+          "ColorError": 0.0008706978525627573,
+          "TemporalError": 0.0005260520988894354
+        },
+        {
+          "Start": 150,
+          "Frames": 90,
+          "ColorError": 0.0019568072403188877,
+          "TemporalError": 0.0025152429024805074
+        }
+      ]
+    },
+    {
+      "Name": "MIR_CGA",
+      "ColorError": 0.0010779809892969485,
+      "DetailError": 0.004956304087178418,
+      "FileBytes": 21180826,
+      "Motion": [
+        {
+          "Start": 30,
+          "Frames": 90,
+          "ColorError": 0.0004029939351215645,
+          "TemporalError": 2.35477039541227E-05
+        },
+        {
+          "Start": 80,
+          "Frames": 90,
+          "ColorError": 0.0006453778248550631,
+          "TemporalError": 7.292892759074539E-05
+        },
+        {
+          "Start": 150,
+          "Frames": 90,
+          "ColorError": 0.0013175650085875052,
+          "TemporalError": 0.0016772602931210887
+        }
+      ]
+    },
+    {
+      "Name": "B4_OFF",
+      "ColorError": 0.0014836251728491394,
+      "DetailError": 0.0058005632682355,
+      "FileBytes": 21769114,
+      "Motion": [
+        {
+          "Start": 30,
+          "Frames": 90,
+          "ColorError": 0.0004407646126780067,
+          "TemporalError": 2.347846941450334E-05
+        },
+        {
+          "Start": 80,
+          "Frames": 90,
+          "ColorError": 0.0009517444144676923,
+          "TemporalError": 0.0005306650756150134
+        },
+        {
+          "Start": 150,
+          "Frames": 90,
+          "ColorError": 0.001982628374416128,
+          "TemporalError": 0.0025554925583113936
+        }
+      ]
+    },
+    {
+      "Name": "B4_STAB",
+      "ColorError": 0.0010834794618687872,
+      "DetailError": 0.00495713246398072,
+      "FileBytes": 21174170,
+      "Motion": [
+        {
+          "Start": 30,
+          "Frames": 90,
+          "ColorError": 0.00041892470947510414,
+          "TemporalError": 2.2801628190660037E-05
+        },
+        {
+          "Start": 80,
+          "Frames": 90,
+          "ColorError": 0.0007207895820626943,
+          "TemporalError": 6.093297598888245E-05
+        },
+        {
+          "Start": 150,
+          "Frames": 90,
+          "ColorError": 0.001313186570296983,
+          "TemporalError": 0.0016825361144538816
+        }
+      ]
+    },
+    {
+      "Name": "BLUE_OFF",
+      "ColorError": 0.001483412988601684,
+      "DetailError": 0.006434994065674531,
+      "FileBytes": 21783962,
+      "Motion": [
+        {
+          "Start": 30,
+          "Frames": 90,
+          "ColorError": 0.0004122266291801452,
+          "TemporalError": 2.5015750247030723E-05
+        },
+        {
+          "Start": 80,
+          "Frames": 90,
+          "ColorError": 0.0009315171424595596,
+          "TemporalError": 0.0008729765567702663
+        },
+        {
+          "Start": 150,
+          "Frames": 90,
+          "ColorError": 0.0019315145112801175,
+          "TemporalError": 0.002525927116221542
+        }
+      ]
+    },
+    {
+      "Name": "BLUE_STB",
+      "ColorError": 0.0010838098891921704,
+      "DetailError": 0.00561229599977197,
+      "FileBytes": 21172122,
+      "Motion": [
+        {
+          "Start": 30,
+          "Frames": 90,
+          "ColorError": 0.00038060824180549793,
+          "TemporalError": 2.486773106149917E-05
+        },
+        {
+          "Start": 80,
+          "Frames": 90,
+          "ColorError": 0.000551261493395136,
+          "TemporalError": 9.574353877338927E-05
+        },
+        {
+          "Start": 150,
+          "Frames": 90,
+          "ColorError": 0.0014082882225197463,
+          "TemporalError": 0.001833803538986656
+        }
+      ]
+    }
+  ]
+}
