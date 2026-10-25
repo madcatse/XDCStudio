@@ -62,7 +62,3 @@ The [Windows CI workflow](.github/workflows/windows.yml) builds, runs synthetic 
 - [Trixter’s blog](https://trixter.oldskool.org/)
 
 Source code is distributed under the original [MIT licence](LICENSE). Bundled FFmpeg and .NET components retain their own licences; see [THIRD-PARTY.txt](THIRD-PARTY.txt) and [dependency source links](docs/DEPENDENCIES.md). Artwork provenance is documented in [assets/README.md](assets/README.md). MIR and other user-supplied videos are not distributed with this repository.
-
-## Preparing a GitHub fork
-
-The working repository preserves the upstream Git history. Creating the GitHub fork and pushing are separate steps requiring the repository owner’s account: [publishing instructions](docs/PUBLISHING.md).
